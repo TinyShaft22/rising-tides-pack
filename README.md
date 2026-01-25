@@ -1,8 +1,8 @@
 # Global Skills System for Claude Code
 
-> **84 skills + 12 plugins** to supercharge your Claude Code experience.
+> **95 skills + 12 plugins** to supercharge your Claude Code experience.
 
-A curated collection of Claude Code skills for React development, marketing, SEO, CRO, documentation, architecture, and more. Includes MCP integrations via a plugin system for zero-config setup.
+A curated collection of Claude Code skills for React development, marketing, SEO, CRO, documentation, architecture, CLI integrations, and more. Includes MCP integrations via a plugin system for zero-config setup.
 
 ---
 
@@ -11,10 +11,61 @@ A curated collection of Claude Code skills for React development, marketing, SEO
 **Skills** are markdown instruction files that teach Claude Code specialized behaviors. Instead of explaining what you want every time, skills pre-load expertise for specific domains.
 
 **This collection includes:**
-- **84 skills** covering React, marketing, SEO, CRO, documentation, architecture, and utilities
+- **95 skills** covering React, marketing, SEO, CRO, documentation, architecture, CLI integrations, and utilities
 - **12 plugins** that bundle skills with MCP servers for seamless integration
+- **CLI-first approach** for GitHub, Stripe, Supabase, Firebase, Vercel, Netlify, and Google Cloud
 - **Organized index** for easy discovery and project matching
 - **Attribution tracking** so you know where each skill came from
+
+---
+
+## Context Efficiency (Tested & Proven)
+
+**The big question:** Won't 95 skills bloat my context window?
+
+**Answer:** No. We tested it. Here's the proof:
+
+### Test Results (January 2026)
+
+| Condition | Total Context | Skills Category | Notes |
+|-----------|---------------|-----------------|-------|
+| **Without skills** | 29k (14%) | 548 tokens | Baseline |
+| **With 95 skills** | 32k (16%) | 7.9k tokens | +7.35k for skills |
+| **After /recommend-skills** | 51k (25%) | 7.9k tokens | Skills unchanged |
+| **After invoking skill** | 75k (38%) | 7.9k tokens | Skills still unchanged |
+
+### What This Proves
+
+1. **Fixed overhead:** 95 skills cost only **7.35k tokens** (~3.5% of context)
+2. **Frontmatter only:** That's ~77 tokens per skill (just triggers/descriptions)
+3. **On-demand loading:** Full skill content loads into Messages when invoked, not Skills
+4. **Index-based recommendations:** `/recommend-skills` reads the lightweight index, not all 95 SKILL.md files
+
+### The Math
+
+| What | Tokens | When Loaded |
+|------|--------|-------------|
+| Skill frontmatter (triggers) | ~77 per skill | Session start (fixed) |
+| Full SKILL.md content | 500-2000 per skill | On invoke only |
+| Reference files | 200-1000 each | On invoke only |
+
+**You're paying <4% context for 95 skills.** Full content would cost 50-100x more.
+
+### How It Works
+
+```
+Session Start
+    ↓
+Load 95 skill frontmatter (7.35k fixed)
+    ↓
+User asks question
+    ↓
+Claude matches to skill trigger
+    ↓
+Read SKILL.md + references on-demand → goes to Messages
+    ↓
+Execute with full expertise
+```
 
 ---
 
@@ -23,7 +74,7 @@ A curated collection of Claude Code skills for React development, marketing, SEO
 ```mermaid
 graph TB
     subgraph "Your Installation"
-        SKILLS["~/.claude/skills/<br/>84 skill folders"]
+        SKILLS["~/.claude/skills/<br/>95 skill folders"]
         INDEX["SKILLS_INDEX.md"]
         REGISTRY["MCP_REGISTRY.md"]
         MEMORY["claude-memory.jsonl<br/>(Desktop)"]
@@ -96,16 +147,23 @@ claude --plugin-dir ./plugins/react-dev-plugin
 | **Marketing/SEO** | 16 | copywriting, SEO audit, marketing psychology |
 | **CRO** | 7 | landing pages, forms, signup flows, A/B testing |
 | **Documentation** | 10 | Word, PDF, PowerPoint, spreadsheets, diagrams |
-| **Development Workflow** | 8 | session handoff, git commits, QA planning |
-| **Database/API** | 4 | schema design, OpenAPI, API handoffs |
+| **GitHub & Version Control** | 2 | github-workflow, commit-work |
+| **Debugging** | 1 | systematic-debugging (4-phase root cause) |
+| **Database/API** | 5 | drizzle-orm, schema design, OpenAPI, API handoffs |
+| **Payments** | 1 | stripe-integration (Stripe CLI) |
+| **Backend Services** | 2 | supabase-guide, firebase-guide |
+| **Deployment** | 3 | vercel-deployment, netlify-deployment, google-cloud-setup |
+| **Auth & Security** | 2 | oauth-setup, skill-safety-check |
+| **SaaS Starters** | 1 | saas-starter-setup (one-shot scaffolding) |
 | **Architecture** | 6 | C4 diagrams, MCP building, plugins |
 | **Communication** | 5 | professional writing, feedback, Jira |
 | **Design/Visuals** | 6 | themes, brands, memes, video |
+| **Development Workflow** | 7 | session handoff, QA planning |
 | **Integrations** | 4 | Perplexity, Gemini, Datadog |
-| **Utilities** | 8 | humanizer, naming, web testing |
+| **Utilities** | 7 | humanizer, naming, web testing |
 | **Orchestration** | 3 | recommend-skills, index updates |
 
-**Total: 84 skills**
+**Total: 95 skills**
 
 See `SKILLS_INDEX.md` for the complete list with invoke commands.
 
@@ -223,8 +281,9 @@ cp -r ~/.claude/skills/react-dev .claude/skills/
 | **Anthropic** | 13 | Documents, design, MCP (built-in) |
 | **Vercel Labs** | 3 | React, web design |
 | **Corey Haines** | 23 | Marketing, SEO, CRO |
-| **Softaworks** | 42 | Dev workflow, architecture |
-| **Nick Mohler** | 3 | Orchestration, video |
+| **Softaworks** | 40 | Dev workflow, architecture |
+| **Nick Mohler** | 15 | Orchestration, video, CLI integrations |
+| **obra/superpowers** | 1 | Debugging methodology |
 
 All skills have been reviewed and attributed. See `ATTRIBUTION.md` for details and original repository links.
 
@@ -234,12 +293,12 @@ All skills have been reviewed and attributed. See `ATTRIBUTION.md` for details a
 
 ```
 ~/.claude/
-├── skills/                  # All 84 skills
+├── skills/                  # All 95 skills
 │   ├── react-dev/
 │   │   └── SKILL.md
 │   ├── copywriting/
 │   │   └── SKILL.md
-│   └── ... (84 folders)
+│   └── ... (95 folders)
 ├── SKILLS_INDEX.md          # Master skill list
 ├── MCP_REGISTRY.md          # MCP configurations
 └── ATTRIBUTION.md           # Skill sources
@@ -290,6 +349,10 @@ See `SECURITY.md` for the complete security model and approved MCP list.
 | Command | Purpose |
 |---------|---------|
 | `/recommend-skills` | Get skill suggestions for current project |
+| `/github-workflow` | Full GitHub lifecycle with gh CLI |
+| `/stripe-integration` | Stripe payments setup |
+| `/saas-starter-setup` | One-shot SaaS scaffolding |
+| `/systematic-debugging` | 4-phase root cause debugging |
 | `/context7` | Pull live documentation |
 | `/react-dev` | React development guidance |
 | `claude mcp list` | Show configured MCPs |
@@ -305,6 +368,7 @@ Built by **Nick Mohler** using skills from:
 - [Vercel Labs](https://github.com/vercel-labs) - React best practices
 - [Corey Haines / SwipeFiles](https://swipefiles.com) - Marketing and CRO
 - [Softaworks](https://github.com/softaworks) - Development workflow
+- [obra/superpowers](https://github.com/obra/superpowers) - Debugging methodology
 
 ---
 

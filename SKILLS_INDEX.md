@@ -2,9 +2,9 @@
 
 > **For Claude Code Use Only** - This file helps Claude quickly identify which skills to use for a given project or task. Read this file when asked to "check skills" or "recommend skills for this project."
 
-**Total Skills Installed:** 85
+**Total Skills Installed:** 95
 **Plugins Available:** 12
-**Last Updated:** January 23, 2026
+**Last Updated:** January 24, 2026
 
 **Related Files:**
 - `MCP_REGISTRY.md` — MCP integrations and install commands
@@ -62,7 +62,7 @@ claude --plugin-dir ./plugins/react-dev-plugin --plugin-dir ./plugins/webapp-tes
 **MCP Tags:** Skills marked with `[MCP: name]` use an MCP. **Prefer plugins** for these skills.
 **Plugin Tags:** Skills marked with `[PLUGIN]` have a plugin equivalent — recommend the plugin instead.
 
-### Master Skill Checklist (All 90 Skills)
+### Master Skill Checklist (All 95 Skills)
 
 **React/Frontend (7):**
 - [ ] react-best-practices - React patterns
@@ -73,9 +73,8 @@ claude --plugin-dir ./plugins/react-dev-plugin --plugin-dir ./plugins/webapp-tes
 - [ ] mui - Material-UI
 - [ ] design-system-starter - Design systems
 
-**Development Workflow (8):**
+**Development Workflow (7):**
 - [ ] session-handoff - Context transfer between sessions
-- [ ] commit-work - Git commit automation `[MCP: github]` `[PLUGIN]`
 - [ ] dependency-updater - Update dependencies
 - [ ] qa-test-planner - QA and testing plans
 - [ ] requirements-clarity - Clarify requirements
@@ -83,20 +82,18 @@ claude --plugin-dir ./plugins/react-dev-plugin --plugin-dir ./plugins/webapp-tes
 - [ ] agent-md-refactor - Markdown refactoring
 - [ ] ship-learn-next - Ship/iterate workflow
 
-**Database/API (4):**
-- [ ] database-schema-designer - Schema design
+**API Integration (3):**
 - [ ] openapi-to-typescript - OpenAPI to TS
 - [ ] backend-to-frontend-handoff-docs - API handoff
 - [ ] frontend-to-backend-requirements - Frontend reqs
 
-**Documentation (10):**
+**Documentation (9):**
 - [ ] doc-coauthoring - Collaborative docs
 - [ ] docx - Word documents
 - [ ] pdf - PDF handling
 - [ ] pptx - Presentations
 - [ ] xlsx - Spreadsheets
 - [ ] mermaid-diagrams - Diagrams as code
-- [ ] draw-io - Diagrams
 - [ ] excalidraw - Whiteboard diagrams
 - [ ] crafting-effective-readmes - README writing
 - [ ] writing-clearly-and-concisely - Clear writing
@@ -157,15 +154,44 @@ claude --plugin-dir ./plugins/react-dev-plugin --plugin-dir ./plugins/webapp-tes
 - [ ] datadog-cli - Datadog monitoring
 - [ ] web-to-markdown - Web to markdown
 
-**Utilities (8):**
+**Utilities (7):**
 - [ ] humanizer - Human-like text
 - [ ] naming-analyzer - Naming conventions
 - [ ] domain-name-brainstormer - Domain names
 - [ ] command-creator - CLI commands
-- [ ] gepetto - Dev assistance
 - [ ] game-changing-features - Feature innovation
 - [ ] webapp-testing - Web app testing `[MCP: playwright]` `[PLUGIN]`
 - [ ] web-artifacts-builder - Web artifacts
+
+**GitHub & Version Control (2):**
+- [ ] github-workflow - Full GitHub lifecycle using gh CLI
+- [ ] commit-work - Git commit automation `[MCP: github]` `[PLUGIN]`
+
+**Debugging (1):**
+- [ ] systematic-debugging - 4-phase root cause debugging methodology
+
+**Database & ORM (2):**
+- [ ] database-schema-designer - Schema design
+- [ ] drizzle-orm - Drizzle ORM for TypeScript
+
+**Payments (1):**
+- [ ] stripe-integration - Stripe CLI payments and subscriptions
+
+**Backend Services (3):**
+- [ ] supabase-guide - Supabase backend (CLI-first)
+- [ ] firebase-guide - Firebase services (CLI-first)
+- [ ] google-cloud-setup - Google Cloud with gcloud CLI
+
+**Deployment (2):**
+- [ ] vercel-deployment - Vercel CLI deployment
+- [ ] netlify-deployment - Netlify CLI deployment
+
+**Auth & Security (2):**
+- [ ] oauth-setup - OAuth provider configuration
+- [ ] skill-safety-check - Verify skill safety before adoption
+
+**SaaS & Starters (1):**
+- [ ] saas-starter-setup - One-shot SaaS scaffolding
 
 **Orchestration (3):**
 - [ ] recommend-skills - Skill recommendation
@@ -272,7 +298,6 @@ claude --plugin-dir ./plugins/react-dev-plugin --plugin-dir ./plugins/webapp-tes
 | pptx | `/pptx` | Creating presentations |
 | xlsx | `/xlsx` | Creating spreadsheets |
 | mermaid-diagrams | `/mermaid` | Creating diagrams as code |
-| draw-io | `/draw-io` | Creating diagrams |
 | excalidraw | `/excalidraw` | Whiteboard-style diagrams |
 | crafting-effective-readmes | `/readme` | Writing README files |
 | writing-clearly-and-concisely | `/writing` | Improving writing clarity |
@@ -281,24 +306,41 @@ claude --plugin-dir ./plugins/react-dev-plugin --plugin-dir ./plugins/webapp-tes
 
 ## Category: Development Workflow
 
-| Skill | Invoke | Use When | MCP | Plugin |
-|-------|--------|----------|-----|--------|
-| session-handoff | `/session-handoff` | Transferring context between sessions | | |
-| commit-work | `/commit-work` | Git commit automation | github | `git-workflow-plugin` |
-| dependency-updater | `/dependency-updater` | Updating dependencies | | |
-| qa-test-planner | `/qa-test-planner` | Planning QA/testing | | |
-| requirements-clarity | `/requirements` | Clarifying requirements | | |
-| reducing-entropy | `/reducing-entropy` | Code organization | | |
-| agent-md-refactor | `/agent-md-refactor` | Refactoring markdown | | |
-| ship-learn-next | `/ship-learn-next` | Ship/learn/iterate workflow | | |
+| Skill | Invoke | Use When |
+|-------|--------|----------|
+| session-handoff | `/session-handoff` | Transferring context between sessions |
+| dependency-updater | `/dependency-updater` | Updating dependencies |
+| qa-test-planner | `/qa-test-planner` | Planning QA/testing |
+| requirements-clarity | `/requirements` | Clarifying requirements |
+| reducing-entropy | `/reducing-entropy` | Code organization |
+| agent-md-refactor | `/agent-md-refactor` | Refactoring markdown |
+| ship-learn-next | `/ship-learn-next` | Ship/learn/iterate workflow |
+| systematic-debugging | `/systematic-debugging` | 4-phase root cause debugging |
 
 ---
 
-## Category: Database & API
+## Category: GitHub & Version Control
+
+| Skill | Invoke | Use When | MCP | Plugin |
+|-------|--------|----------|-----|--------|
+| github-workflow | `/github-workflow` | Full GitHub lifecycle (repos, PRs, releases) | | |
+| commit-work | `/commit-work` | Git commit automation | github | `git-workflow-plugin` |
+
+---
+
+## Category: Database & ORM
 
 | Skill | Invoke | Use When |
 |-------|--------|----------|
 | database-schema-designer | `/db-schema` | Designing database schemas |
+| drizzle-orm | `/drizzle-orm` | Drizzle ORM for TypeScript |
+
+---
+
+## Category: API Integration
+
+| Skill | Invoke | Use When |
+|-------|--------|----------|
 | openapi-to-typescript | `/openapi-ts` | Converting OpenAPI to TypeScript |
 | backend-to-frontend-handoff-docs | `/api-handoff` | API documentation for frontend |
 | frontend-to-backend-requirements | `/frontend-requirements` | Frontend requirements for backend |
@@ -362,10 +404,53 @@ claude --plugin-dir ./plugins/react-dev-plugin --plugin-dir ./plugins/webapp-tes
 | naming-analyzer | `/naming` | Analyzing naming conventions | | |
 | domain-name-brainstormer | `/domains` | Brainstorming domain names | | |
 | command-creator | `/command-creator` | Creating CLI commands | | |
-| gepetto | `/gepetto` | Development assistance | | |
 | game-changing-features | `/game-changing` | Feature innovation | | |
 | webapp-testing | `/webapp-testing` | Testing web applications | playwright | `webapp-testing-plugin` |
 | web-artifacts-builder | `/web-artifacts` | Building web artifacts | | |
+
+---
+
+## Category: Payments
+
+| Skill | Invoke | Use When |
+|-------|--------|----------|
+| stripe-integration | `/stripe-integration` | Stripe payments, checkout, subscriptions |
+
+---
+
+## Category: Backend Services
+
+| Skill | Invoke | Use When |
+|-------|--------|----------|
+| supabase-guide | `/supabase-guide` | Supabase backend (database, auth, realtime) |
+| firebase-guide | `/firebase-guide` | Firebase (Firestore, Auth, Hosting, Functions) |
+| google-cloud-setup | `/google-cloud-setup` | Google Cloud (Cloud Run, Functions) |
+
+---
+
+## Category: Deployment
+
+| Skill | Invoke | Use When |
+|-------|--------|----------|
+| vercel-deployment | `/vercel-deployment` | Vercel CLI deployment |
+| netlify-deployment | `/netlify-deployment` | Netlify CLI deployment |
+
+---
+
+## Category: Auth & Security
+
+| Skill | Invoke | Use When |
+|-------|--------|----------|
+| oauth-setup | `/oauth-setup` | OAuth provider configuration (Google, GitHub, Discord) |
+| skill-safety-check | `/skill-safety-check` | Verify skill safety before adoption |
+
+---
+
+## Category: SaaS Starters
+
+| Skill | Invoke | Use When |
+|-------|--------|----------|
+| saas-starter-setup | `/saas-starter-setup` | One-shot SaaS scaffolding (Next.js + Drizzle + Stripe) |
 
 ---
 
@@ -419,9 +504,10 @@ claude --plugin-dir ./plugins/react-dev-plugin --plugin-dir ./plugins/webapp-tes
 | Anthropic (pre-installed) | 13 | Documents, design, MCP |
 | Vercel Labs | 3 | React, web design |
 | Corey Haines | 23 | Marketing, SEO, CRO |
-| Softaworks | 42 | Dev workflow, architecture |
-| Nick Mohler | 4 | Orchestration, video |
-| **Total** | **85** | |
+| Softaworks | 40 | Dev workflow, architecture |
+| Nick Mohler | 15 | Orchestration, video, CLI integrations |
+| obra/superpowers | 1 | Debugging methodology |
+| **Total** | **95** | |
 
 ---
 

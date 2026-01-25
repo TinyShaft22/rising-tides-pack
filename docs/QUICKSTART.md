@@ -9,6 +9,21 @@ This guide gets you from zero to using skills as fast as possible.
 - Claude Code CLI installed (`claude` command works)
 - Basic familiarity with terminal commands
 
+### Recommended CLI Tools
+
+These CLIs enhance specific skills. Install them as needed:
+
+| CLI | Install | Used By |
+|-----|---------|---------|
+| `gh` | `brew install gh` | github-workflow |
+| `stripe` | `brew install stripe/stripe-cli/stripe` | stripe-integration |
+| `supabase` | `brew install supabase/tap/supabase` | supabase-guide |
+| `vercel` | `npm install -g vercel` | vercel-deployment |
+| `firebase` | `npm install -g firebase-tools` | firebase-guide |
+| `netlify` | `npm install -g netlify-cli` | netlify-deployment |
+| `gcloud` | `brew install google-cloud-sdk` | google-cloud-setup |
+| `jq` | `brew install jq` | Status line (optional) |
+
 ---
 
 ## Step 1: Copy Skills (1 minute)
@@ -90,11 +105,32 @@ Plugins bundle the skill + MCP together - no separate configuration needed.
 
 ---
 
+## Step 6: Set Up Status Line (Optional, 1 minute)
+
+Add a status line showing model, context usage, and git branch:
+
+```bash
+# Run the setup script
+./scripts/setup-statusline.sh
+```
+
+Or configure manually with:
+```
+/statusline show model name, context percentage as progress bar, git branch, and folder name
+```
+
+The status line shows:
+```
+opus-4 | [########------------] 40% | 80k | main | my-project
+```
+
+---
+
 ## What's Next?
 
 ### Browse Available Skills
 
-Open `SKILLS_INDEX.md` to see all 84 skills organized by category.
+Open `SKILLS_INDEX.md` to see all 95 skills organized by category.
 
 ### Common Skill Commands
 
@@ -170,5 +206,6 @@ See `MCP_REGISTRY.md` for all available MCP configurations.
 | 3. Try it | `/recommend-skills` | 1 min |
 | 4. Memory (opt) | `claude mcp add memory --scope user` | 2 min |
 | 5. Plugins (opt) | `claude --plugin-dir ./plugins/[name]` | 1 min |
+| 6. Status line (opt) | `./scripts/setup-statusline.sh` | 1 min |
 
-**Total: ~5 minutes to full setup**
+**Total: ~5-7 minutes to full setup**

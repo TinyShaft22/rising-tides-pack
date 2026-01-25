@@ -112,7 +112,6 @@ Development workflow, architecture, and professional skills.
 | naming-analyzer | Naming conventions |
 | domain-name-brainstormer | Domain name ideas |
 | command-creator | CLI command creation |
-| gepetto | Development assistance |
 | game-changing-features | Feature innovation |
 | perplexity | Perplexity AI integration |
 | gemini | Google Gemini integration |
@@ -137,8 +136,30 @@ Custom skills created for personal/agency use.
 | recommend-skills | Skill recommendation orchestrator |
 | update-skills-index | Skills index maintenance |
 | video-generator | Remotion video generation |
+| github-workflow | Full GitHub lifecycle using gh CLI |
+| drizzle-orm | Drizzle ORM for TypeScript |
+| stripe-integration | Stripe CLI payments and subscriptions |
+| supabase-guide | Supabase backend (CLI-first) |
+| firebase-guide | Firebase services (CLI-first) |
+| vercel-deployment | Vercel CLI deployment |
+| netlify-deployment | Netlify CLI deployment |
+| google-cloud-setup | Google Cloud with gcloud CLI |
+| oauth-setup | OAuth provider configuration |
+| saas-starter-setup | One-shot SaaS scaffolding |
+| skill-safety-check | Verify skill safety before adoption |
 
 **Source:** This repository
+
+---
+
+### obra/superpowers
+Debugging methodology adapted from Jesse Vincent's superpowers repository.
+
+| Skill | Description |
+|-------|-------------|
+| systematic-debugging | 4-phase root cause debugging methodology |
+
+**Source:** [github.com/obra/superpowers](https://github.com/obra/superpowers) (MIT License)
 
 ---
 
@@ -171,9 +192,10 @@ If you create a useful skill:
 | Anthropic | 13 | Documents, design, MCP |
 | Vercel Labs | 3 | React, web design |
 | Corey Haines | 23 | Marketing, SEO, CRO |
-| Softaworks | 42 | Dev workflow, architecture |
-| Nick Mohler | 3 | Orchestration, video |
-| **Total** | **84** | |
+| Softaworks | 40 | Dev workflow, architecture |
+| Nick Mohler | 15 | Orchestration, video, CLI integrations |
+| obra/superpowers | 1 | Debugging methodology |
+| **Total** | **95** | |
 
 ---
 

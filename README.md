@@ -8,10 +8,6 @@ A curated collection of Claude Code skills for React development, marketing, SEO
 
 ## Architecture Overview
 
-![Architecture Diagram](assets/architecture-overview.excalidraw.json)
-
-> **Visual:** Open `assets/architecture-overview.excalidraw.json` in [Excalidraw](https://excalidraw.com) to see the full system diagram.
-
 ```
 ┌─────────────────────────────────────────────────────────────┐
 │                        PLUGINS (12)                          │

@@ -1,47 +1,83 @@
 ---
 name: saas-starter-setup
-description: "One-shot SaaS scaffolding. Next.js + PostgreSQL + Drizzle + Stripe + Vercel. Use when starting a new SaaS project from scratch. Triggers on: 'saas starter', 'start saas', 'new saas project', 'saas template', 'saas boilerplate'."
+description: "Quick SaaS setup using the official Next.js SaaS Starter (15k+ stars). Teams, roles, Stripe, auth — all pre-built. Clone and customize in minutes. Triggers on: 'saas starter', 'start saas', 'new saas project', 'saas template', 'quick saas', 'nextjs saas'."
 ---
 
 # SaaS Starter Setup
 
-Complete SaaS application scaffolding with modern stack.
+Get a production-ready SaaS running in minutes using the official Next.js SaaS Starter.
 
-## The Stack
+> **Want more control?** Use `/saas-from-scratch` to build piece-by-piece with full customization.
 
-| Layer | Technology |
-|-------|------------|
-| **Framework** | Next.js 14+ (App Router) |
-| **Database** | PostgreSQL + Drizzle ORM |
-| **Auth** | NextAuth.js with OAuth |
-| **Payments** | Stripe (subscriptions) |
-| **Styling** | Tailwind CSS + shadcn/ui |
-| **Hosting** | Vercel |
+---
+
+## Why This Template?
+
+| Feature | Included |
+|---------|----------|
+| **Auth** | Email/password with JWT |
+| **Teams** | Multi-user team management |
+| **Roles** | Owner and Member permissions |
+| **Payments** | Stripe subscriptions + Customer Portal |
+| **Dashboard** | User and team CRUD operations |
+| **Activity Log** | Built-in event tracking |
+| **Landing Page** | Marketing page with pricing |
+
+**Source:** [github.com/nextjs/saas-starter](https://github.com/nextjs/saas-starter) (15k+ stars, maintained by Vercel)
 
 ---
 
 ## Quick Start
 
-### 1. Create Project
+### 1. Clone the Template
 
 ```bash
-npx create-next-app@latest my-saas --typescript --tailwind --app --eslint
+git clone https://github.com/nextjs/saas-starter.git my-saas
 cd my-saas
+npm install
 ```
 
-### 2. Install Dependencies
+### 2. Set Up Database
+
+Create a PostgreSQL database (Vercel Postgres, Neon, Supabase, or local).
 
 ```bash
-npm install drizzle-orm postgres @auth/drizzle-adapter next-auth stripe @stripe/stripe-js
-npm install -D drizzle-kit
+# Copy environment template
+cp .env.example .env
 ```
 
-### 3. Add shadcn/ui
+Edit `.env`:
+```env
+POSTGRES_URL=postgres://user:pass@host:5432/dbname
+```
+
+Push the schema:
+```bash
+npm run db:push
+```
+
+### 3. Configure Stripe
+
+1. Create products in [Stripe Dashboard](https://dashboard.stripe.com/products)
+2. Get your API keys from [Stripe API Keys](https://dashboard.stripe.com/apikeys)
+3. Add to `.env`:
+
+```env
+STRIPE_SECRET_KEY=sk_test_xxx
+STRIPE_WEBHOOK_SECRET=whsec_xxx
+NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=pk_test_xxx
+STRIPE_PRICE_ID=price_xxx
+```
+
+4. Set up webhook endpoint in Stripe → `/api/webhooks/stripe`
+
+### 4. Run Locally
 
 ```bash
-npx shadcn-ui@latest init
-npx shadcn-ui@latest add button card input label
+npm run dev
 ```
+
+Open [http://localhost:3000](http://localhost:3000)
 
 ---
 
@@ -50,166 +86,131 @@ npx shadcn-ui@latest add button card input label
 ```
 my-saas/
 ├── app/
-│   ├── (auth)/
-│   │   ├── login/page.tsx
-│   │   └── signup/page.tsx
-│   ├── (dashboard)/
-│   │   ├── dashboard/page.tsx
-│   │   └── settings/page.tsx
+│   ├── (dashboard)/         # Protected dashboard routes
+│   │   ├── dashboard/
+│   │   └── settings/
+│   ├── (marketing)/         # Public marketing pages
+│   │   ├── page.tsx         # Landing page
+│   │   └── pricing/
 │   ├── api/
-│   │   ├── auth/[...nextauth]/route.ts
-│   │   └── webhooks/stripe/route.ts
-│   ├── layout.tsx
-│   └── page.tsx
+│   │   ├── auth/            # Auth endpoints
+│   │   └── webhooks/stripe/ # Stripe webhooks
+│   └── layout.tsx
 ├── components/
-│   ├── ui/               # shadcn components
+│   ├── ui/                  # shadcn/ui components
 │   └── ...
 ├── lib/
 │   ├── db/
-│   │   ├── index.ts      # Drizzle client
-│   │   └── schema.ts     # Database schema
-│   ├── auth.ts           # NextAuth config
-│   └── stripe.ts         # Stripe client
-├── drizzle/              # Migrations
+│   │   ├── drizzle.ts       # Database client
+│   │   └── schema.ts        # Database schema
+│   ├── auth/                # Auth utilities
+│   ├── payments/            # Stripe utilities
+│   └── ...
 └── drizzle.config.ts
 ```
 
 ---
 
-## Database Setup
+## Common Customizations
 
-### Schema
+### Add OAuth Providers
 
+Edit `lib/auth/config.ts`:
 ```typescript
-// lib/db/schema.ts
-import { pgTable, text, timestamp, serial, boolean, integer } from 'drizzle-orm/pg-core';
-
-export const users = pgTable('users', {
-  id: text('id').primaryKey(),
-  email: text('email').notNull().unique(),
-  name: text('name'),
-  image: text('image'),
-  stripeCustomerId: text('stripe_customer_id'),
-  stripeSubscriptionId: text('stripe_subscription_id'),
-  stripePriceId: text('stripe_price_id'),
-  stripeCurrentPeriodEnd: timestamp('stripe_current_period_end'),
-  createdAt: timestamp('created_at').defaultNow(),
-});
-
-export const subscriptions = pgTable('subscriptions', {
-  id: serial('id').primaryKey(),
-  userId: text('user_id').references(() => users.id),
-  stripeSubscriptionId: text('stripe_subscription_id'),
-  stripePriceId: text('stripe_price_id'),
-  stripeCurrentPeriodEnd: timestamp('stripe_current_period_end'),
-  status: text('status'),
-  createdAt: timestamp('created_at').defaultNow(),
-});
-```
-
-### Environment
-
-```env
-DATABASE_URL=postgres://...
-
-NEXTAUTH_URL=http://localhost:3000
-NEXTAUTH_SECRET=xxx
-
-GOOGLE_CLIENT_ID=xxx
-GOOGLE_CLIENT_SECRET=xxx
-
-STRIPE_SECRET_KEY=sk_test_xxx
-STRIPE_PUBLISHABLE_KEY=pk_test_xxx
-STRIPE_WEBHOOK_SECRET=whsec_xxx
-STRIPE_PRICE_ID=price_xxx
-```
-
----
-
-## Auth Setup
-
-```typescript
-// lib/auth.ts
-import NextAuth from 'next-auth';
 import Google from 'next-auth/providers/google';
-import { DrizzleAdapter } from '@auth/drizzle-adapter';
-import { db } from './db';
+import GitHub from 'next-auth/providers/github';
 
-export const { handlers, auth, signIn, signOut } = NextAuth({
-  adapter: DrizzleAdapter(db),
+export const authConfig = {
   providers: [
     Google({
       clientId: process.env.GOOGLE_CLIENT_ID!,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET!,
     }),
-  ],
-  callbacks: {
-    session: ({ session, user }) => ({
-      ...session,
-      user: { ...session.user, id: user.id },
+    GitHub({
+      clientId: process.env.GITHUB_CLIENT_ID!,
+      clientSecret: process.env.GITHUB_CLIENT_SECRET!,
     }),
-  },
-});
+  ],
+};
 ```
 
----
+### Change Pricing Tiers
 
-## Stripe Integration
+Edit your Stripe products and update the price IDs in `.env`:
+```env
+STRIPE_PRICE_ID_BASIC=price_xxx
+STRIPE_PRICE_ID_PRO=price_xxx
+STRIPE_PRICE_ID_ENTERPRISE=price_xxx
+```
 
+### Add New Database Tables
+
+Edit `lib/db/schema.ts`:
 ```typescript
-// lib/stripe.ts
-import Stripe from 'stripe';
-
-export const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
-  apiVersion: '2024-12-18.acacia',
+export const projects = pgTable('projects', {
+  id: serial('id').primaryKey(),
+  teamId: integer('team_id').references(() => teams.id),
+  name: text('name').notNull(),
+  createdAt: timestamp('created_at').defaultNow(),
 });
+```
 
-// Create checkout session
-export async function createCheckoutSession(userId: string, priceId: string) {
-  return stripe.checkout.sessions.create({
-    mode: 'subscription',
-    customer_email: undefined, // or pass email
-    line_items: [{ price: priceId, quantity: 1 }],
-    success_url: `${process.env.NEXTAUTH_URL}/dashboard?success=true`,
-    cancel_url: `${process.env.NEXTAUTH_URL}/pricing`,
-    metadata: { userId },
-  });
-}
+Then push:
+```bash
+npm run db:push
 ```
 
 ---
 
-## Deployment
+## Deploy to Vercel
 
 ```bash
-# Push database
-npx drizzle-kit push
+# Install Vercel CLI
+npm i -g vercel
 
-# Deploy to Vercel
-vercel --prod
+# Deploy
+vercel
 
-# Set environment variables in Vercel
-vercel env add DATABASE_URL production
+# Set environment variables
+vercel env add POSTGRES_URL production
 vercel env add STRIPE_SECRET_KEY production
+vercel env add STRIPE_WEBHOOK_SECRET production
 # ... etc
+
+# Deploy to production
+vercel --prod
 ```
+
+**Important:** Update your Stripe webhook URL to your production domain.
 
 ---
 
-## Reference Files
+## Environment Variables
 
-- `references/stack-overview.md` — Technology decisions
-- `references/project-setup.md` — Scaffolding steps
-- `references/database-setup.md` — Schema and migrations
-- `references/auth-setup.md` — NextAuth configuration
-- `references/payments-setup.md` — Stripe integration
-- `references/deployment-setup.md` — Vercel deployment
+| Variable | Description |
+|----------|-------------|
+| `POSTGRES_URL` | PostgreSQL connection string |
+| `NEXTAUTH_SECRET` | Random string for JWT signing |
+| `NEXTAUTH_URL` | Your app URL (http://localhost:3000 for dev) |
+| `STRIPE_SECRET_KEY` | Stripe secret key |
+| `STRIPE_WEBHOOK_SECRET` | Stripe webhook signing secret |
+| `NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY` | Stripe publishable key |
+| `STRIPE_PRICE_ID` | Default Stripe price ID |
 
 ---
 
 ## When to Use
 
-- Starting a new SaaS product from scratch
-- Need user auth + payments quickly
-- Want modern, production-ready architecture
-- Building subscription-based applications
+- **Starting a new SaaS quickly** — Teams, auth, payments ready in minutes
+- **Need multi-user support** — Team management built-in
+- **Want battle-tested code** — 15k+ stars, maintained by Vercel
+- **Standard SaaS patterns** — Follows best practices
+
+---
+
+## When to Use `/saas-from-scratch` Instead
+
+- **Need different auth** — OAuth only, no email/password
+- **Don't need teams** — Simpler single-user setup
+- **Want to learn** — Understand every piece of the stack
+- **Highly custom requirements** — Non-standard architecture

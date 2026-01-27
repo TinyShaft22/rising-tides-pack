@@ -40,7 +40,8 @@ React and web design best practices from the Vercel team.
 | web-design-guidelines | UI/UX design principles |
 | design-system-starter | Design system foundations |
 
-**Source:** [github.com/vercel-labs/ai-sdk-starter](https://github.com/vercel-labs/ai-sdk-starter)
+**Source:** [github.com/vercel-labs/agent-skills](https://github.com/vercel-labs/agent-skills)
+**License:** MIT
 
 ---
 
@@ -73,7 +74,8 @@ Marketing, SEO, and CRO skills for product growth.
 | popup-cro | Popup optimization |
 | ab-test-setup | A/B testing setup |
 
-**Source:** [github.com/coreyhaines/swipefiles-skills](https://github.com/coreyhaines/swipefiles-skills)
+**Source:** [github.com/coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills)
+**License:** MIT
 **Website:** [swipefiles.com](https://swipefiles.com)
 
 ---
@@ -124,7 +126,8 @@ Development workflow, architecture, and professional skills.
 | mui | Material-UI components |
 | skill-judge | Skill evaluation |
 
-**Source:** [github.com/softaworks/claude-skills](https://github.com/softaworks/claude-skills)
+**Source:** [github.com/softaworks/agent-toolkit](https://github.com/softaworks/agent-toolkit)
+**License:** MIT
 
 ---
 
@@ -201,8 +204,24 @@ If you create a useful skill:
 
 ## License Notes
 
-- **Anthropic skills:** Part of Claude Code, follow Anthropic's terms
-- **Vercel Labs:** MIT License
-- **Corey Haines:** Personal use permitted, check repo for commercial terms
-- **Softaworks:** MIT License
-- **Nick Mohler:** Personal use, share freely with attribution
+All curated skills use permissive open-source licenses that allow commercial use:
+
+| Source | License | Commercial Use |
+|--------|---------|----------------|
+| **Anthropic** | Apache 2.0 (most skills) | ✅ Yes |
+| **Vercel Labs** | MIT | ✅ Yes |
+| **Corey Haines** | MIT | ✅ Yes |
+| **Softaworks** | MIT | ✅ Yes |
+| **obra/superpowers** | MIT | ✅ Yes |
+| **Nick Mohler** | MIT | ✅ Yes |
+
+**MIT License Requirements:**
+- Include copyright notice and license in distributions
+- No warranty provided
+
+**Apache 2.0 Requirements:**
+- Include copyright notice and license
+- State changes made to original code
+- No warranty provided
+
+All skills in this collection comply with their respective licenses. Attribution is provided above.

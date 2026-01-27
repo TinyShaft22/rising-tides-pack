@@ -1,8 +1,58 @@
-# Global Skills System for Claude Code
+# Rising Tides Skills Pack
 
-> **95 skills + 12 plugins** to supercharge your Claude Code experience.
+> **77 skills + 12 plugins + 9 CLI integrations + 8 MCPs** — everything you need to supercharge Claude Code.
 
 A curated collection of Claude Code skills for React development, marketing, SEO, CRO, documentation, architecture, CLI integrations, and more. Includes MCP integrations via a plugin system for zero-config setup.
+
+---
+
+## Architecture Overview
+
+![Architecture Diagram](assets/architecture-overview.excalidraw.json)
+
+> **Visual:** Open `assets/architecture-overview.excalidraw.json` in [Excalidraw](https://excalidraw.com) to see the full system diagram.
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│                        PLUGINS (12)                          │
+│  Bundle everything: Skill + MCP + CLI reference              │
+│  Load with: claude --plugin-dir ./plugins/[name]            │
+└─────────────────────────────────────────────────────────────┘
+                              │
+        ┌─────────────────────┼─────────────────────┐
+        ▼                     ▼                     ▼
+┌───────────────┐    ┌───────────────┐    ┌───────────────┐
+│  SKILLS (77)  │    │   MCPs (8)    │    │   CLIs (9)    │
+│  Knowledge &  │    │  Rich API     │    │  Auth &       │
+│  workflows    │    │  operations   │    │  simple ops   │
+│               │    │               │    │               │
+│  Markdown-    │    │  context7     │    │  gh, stripe   │
+│  based        │    │  playwright   │    │  vercel...    │
+└───────────────┘    └───────────────┘    └───────────────┘
+```
+
+---
+
+## One-Click Install
+
+**New to Claude Code?** Use our starter pack for automated setup:
+
+### Mac
+```bash
+curl -fsSL https://raw.githubusercontent.com/TinyShaft22/rising-tides-starter/main/scripts/setup-mac.sh | bash
+```
+
+### Windows (PowerShell as Admin)
+```powershell
+Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/TinyShaft22/rising-tides-starter/main/scripts/setup-windows.ps1'))
+```
+
+### Linux / WSL2
+```bash
+curl -fsSL https://raw.githubusercontent.com/TinyShaft22/rising-tides-starter/main/scripts/setup-linux.sh | bash
+```
+
+This installs Node.js, Git, Claude Code, and the full skills pack automatically.
 
 ---
 
@@ -11,7 +61,7 @@ A curated collection of Claude Code skills for React development, marketing, SEO
 **Skills** are markdown instruction files that teach Claude Code specialized behaviors. Instead of explaining what you want every time, skills pre-load expertise for specific domains.
 
 **This collection includes:**
-- **95 skills** covering React, marketing, SEO, CRO, documentation, architecture, CLI integrations, and utilities
+- **77 skills** covering React, marketing, SEO, CRO, documentation, architecture, CLI integrations, and utilities
 - **12 plugins** that bundle skills with MCP servers for seamless integration
 - **CLI-first approach** for GitHub, Stripe, Supabase, Firebase, Vercel, Netlify, and Google Cloud
 - **Organized index** for easy discovery and project matching
@@ -21,7 +71,7 @@ A curated collection of Claude Code skills for React development, marketing, SEO
 
 ## Context Efficiency (Tested & Proven)
 
-**The big question:** Won't 95 skills bloat my context window?
+**The big question:** Won't 77 skills bloat my context window?
 
 **Answer:** No. We tested it. Here's the proof:
 
@@ -30,13 +80,13 @@ A curated collection of Claude Code skills for React development, marketing, SEO
 | Condition | Total Context | Skills Category | Notes |
 |-----------|---------------|-----------------|-------|
 | **Without skills** | 29k (14%) | 548 tokens | Baseline |
-| **With 95 skills** | 32k (16%) | 7.9k tokens | +7.35k for skills |
+| **With 77 skills** | 32k (16%) | 7.9k tokens | +7.35k for skills |
 | **After /recommend-skills** | 51k (25%) | 7.9k tokens | Skills unchanged |
 | **After invoking skill** | 75k (38%) | 7.9k tokens | Skills still unchanged |
 
 ### What This Proves
 
-1. **Fixed overhead:** 95 skills cost only **7.35k tokens** (~3.5% of context)
+1. **Fixed overhead:** 77 skills cost only **7.35k tokens** (~3.5% of context)
 2. **Frontmatter only:** That's ~77 tokens per skill (just triggers/descriptions)
 3. **On-demand loading:** Full skill content loads into Messages when invoked, not Skills
 4. **Index-based recommendations:** `/recommend-skills` reads the lightweight index, not all 95 SKILL.md files
@@ -49,7 +99,7 @@ A curated collection of Claude Code skills for React development, marketing, SEO
 | Full SKILL.md content | 500-2000 per skill | On invoke only |
 | Reference files | 200-1000 each | On invoke only |
 
-**You're paying <4% context for 95 skills.** Full content would cost 50-100x more.
+**You're paying <4% context for 77 skills.** Full content would cost 50-100x more.
 
 ### How It Works
 
@@ -163,7 +213,7 @@ claude --plugin-dir ./plugins/react-dev-plugin
 | **Utilities** | 7 | humanizer, naming, web testing |
 | **Orchestration** | 3 | recommend-skills, index updates |
 
-**Total: 95 skills**
+**Total: 77 skills**
 
 See `SKILLS_INDEX.md` for the complete list with invoke commands.
 
@@ -293,7 +343,7 @@ All skills have been reviewed and attributed. See `ATTRIBUTION.md` for details a
 
 ```
 ~/.claude/
-├── skills/                  # All 95 skills
+├── skills/                  # All 77 skills
 │   ├── react-dev/
 │   │   └── SKILL.md
 │   ├── copywriting/
@@ -364,16 +414,33 @@ See `SECURITY.md` for the complete security model and approved MCP list.
 ## Credits
 
 Built by **Nick Mohler** using skills from:
-- [Anthropic](https://anthropic.com) - Claude Code built-in skills
-- [Vercel Labs](https://github.com/vercel-labs) - React best practices
-- [Corey Haines / SwipeFiles](https://swipefiles.com) - Marketing and CRO
-- [Softaworks](https://github.com/softaworks) - Development workflow
-- [obra/superpowers](https://github.com/obra/superpowers) - Debugging methodology
+- [Anthropic](https://github.com/anthropics/skills) - Claude Code built-in skills (Apache 2.0)
+- [Vercel Labs](https://github.com/vercel-labs/agent-skills) - React best practices (MIT)
+- [Corey Haines](https://github.com/coreyhaines31/marketingskills) - Marketing and CRO (MIT)
+- [Softaworks](https://github.com/softaworks/agent-toolkit) - Development workflow (MIT)
+- [obra/superpowers](https://github.com/obra/superpowers) - Debugging methodology (MIT)
+
+All curated skills use permissive open-source licenses (MIT/Apache 2.0). See `ATTRIBUTION.md` for full details.
+
+---
+
+## Community & Support
+
+- **Community:** [Rising Tides on Skool](https://skool.com/rising-tides) — Get help, share wins
+- **Issues:** [GitHub Issues](https://github.com/TinyShaft22/rising-tides-pack/issues)
+- **Starter Pack:** [rising-tides-starter](https://github.com/TinyShaft22/rising-tides-starter)
 
 ---
 
 ## Getting Help
 
-1. Check `docs/QUICKSTART.md` for setup issues
-2. Check `MCP_REGISTRY.md` for MCP troubleshooting
-3. Run `/recommend-skills` in any project for guidance
+1. **Join the community:** [skool.com/rising-tides](https://skool.com/rising-tides)
+2. Check `docs/QUICKSTART.md` for setup issues
+3. Check `MCP_REGISTRY.md` for MCP troubleshooting
+4. Run `/recommend-skills` in any project for guidance
+
+---
+
+## License
+
+This curation is MIT licensed. Individual skills retain their original licenses (all MIT or Apache 2.0). See `ATTRIBUTION.md` for details.

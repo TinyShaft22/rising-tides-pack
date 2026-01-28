@@ -89,37 +89,37 @@
     "playwright": {
       "name": "Playwright MCP",
       "purpose": "Browser automation and E2E testing",
-      "install": "npx -y @anthropic/mcp-playwright",
+      "install": "npx -y @playwright/mcp",
       "config": {
         "command": "npx",
-        "args": ["-y", "@anthropic/mcp-playwright"]
+        "args": ["-y", "@playwright/mcp"]
       }
     },
     "remotion": {
       "name": "Remotion MCP",
       "purpose": "Programmatic video generation",
-      "install": "npx -y @anthropic/mcp-remotion",
+      "install": "npx -y @anthropic-ai/mcp-server-remotion",
       "config": {
         "command": "npx",
-        "args": ["-y", "@anthropic/mcp-remotion"]
+        "args": ["-y", "@anthropic-ai/mcp-server-remotion"]
       }
     },
     "github": {
       "name": "GitHub MCP",
       "purpose": "GitHub API operations",
-      "install": "npx -y @anthropic/mcp-github",
+      "install": "npx -y @anthropic-ai/mcp-server-github",
       "config": {
         "command": "npx",
-        "args": ["-y", "@anthropic/mcp-github"]
+        "args": ["-y", "@anthropic-ai/mcp-server-github"]
       }
     },
     "memory": {
       "name": "Memory MCP",
       "purpose": "Persistent knowledge graph across sessions",
-      "install": "npx -y @anthropic/mcp-memory",
+      "install": "npx -y @modelcontextprotocol/server-memory",
       "config": {
         "command": "npx",
-        "args": ["-y", "@anthropic/mcp-memory"]
+        "args": ["-y", "@modelcontextprotocol/server-memory"]
       }
     },
     "claude-in-chrome": {
@@ -131,19 +131,19 @@
     "shadcn": {
       "name": "shadcn/ui MCP",
       "purpose": "Component registry and installation",
-      "install": "npx -y @anthropic/mcp-shadcn",
+      "install": "npx -y @jpisnice/shadcn-ui-mcp-server",
       "config": {
         "command": "npx",
-        "args": ["-y", "@anthropic/mcp-shadcn"]
+        "args": ["-y", "@jpisnice/shadcn-ui-mcp-server"]
       }
     },
     "perplexity": {
       "name": "Perplexity MCP",
       "purpose": "Web search and research",
-      "install": "npx -y @anthropic/mcp-perplexity",
+      "install": "npx -y @jschuller/perplexity-mcp",
       "config": {
         "command": "npx",
-        "args": ["-y", "@anthropic/mcp-perplexity"]
+        "args": ["-y", "@jschuller/perplexity-mcp"]
       }
     }
   },

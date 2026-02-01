@@ -22,9 +22,9 @@ Read the index file at:
 ```
 
 The Skills Index contains:
-- 77 global skills organized by category
-- 12 plugins for MCP-dependent skills
-- CLI and MCP definitions
+- 196 global skills organized by category
+- 37 plugins (skill + optional MCP bundles)
+- 17 MCPs and 9 CLI definitions
 - Triggers for each skill (for matching against project needs)
 
 ### Step 2: Inventory What's Already Available
@@ -53,20 +53,20 @@ For EVERY skill in the global index, assess:
 - **MAYBE** - Could be useful in some scenarios
 - **SKIP** - Not relevant to this project
 
-**CRITICAL: For skills marked `[PLUGIN]`, recommend the PLUGIN instead of the standalone skill.**
+**CRITICAL: For skills that have a `"plugin"` field in the index, recommend the PLUGIN instead of the standalone skill.** Read the `plugins[]` array and each skill's `"plugin"` field from SKILLS_INDEX.json — do NOT rely on a hardcoded list. There are 37 plugins covering security, frontend, DevOps, testing, and more.
 
-| Skill | MCP | Plugin to Recommend |
-|-------|-----|---------------------|
-| react-dev | context7 | `react-dev-plugin` |
-| frontend-design | context7 | `frontend-design-plugin` |
-| mcp-builder | context7 | `mcp-builder-plugin` |
-| webapp-testing | playwright | `webapp-testing-plugin` |
-| commit-work | github | `git-workflow-plugin` |
-| video-generator | remotion | `video-generator-plugin` |
+### Step 4.5: Check Companion Plugins
+
+Read `companionPlugins` from the index file. For each companion plugin:
+- Match its triggers against the project context
+- Only suggest if NO Rising Tides skill already covers the need
+- These are Anthropic enterprise plugins — separate install path
+
+**Key rule:** Rising Tides has 16 marketing skills. Only suggest the Anthropic `marketing` companion plugin if the user needs enterprise-grade campaign management with Slack/HubSpot connectors, not basic copywriting or SEO.
 
 ### Step 5: Present Assessment
 
-Show FOUR sections:
+Show FIVE sections:
 
 **1. Already Available (no action needed)**
 | Item | Type | Status |
@@ -89,6 +89,16 @@ Show FOUR sections:
 | Skill | Reason |
 |-------|--------|
 | [skill-name] | [why it doesn't apply] |
+
+**5. Companion Plugins (Anthropic Enterprise — Optional)**
+
+These are separate from Rising Tides. Install via `claude plugins add`.
+
+| Plugin | Why It Helps | Install |
+|--------|-------------|---------|
+| [name] | [reason tied to project] | `claude plugins add knowledge-work-plugins/[id]` |
+
+*These use HTTP-based MCPs (Slack, Notion, etc.) — no local setup needed.*
 
 ### Step 6: Get User Confirmation
 
@@ -169,14 +179,9 @@ export ENABLE_TOOL_SEARCH=auto
 ## Plugin vs Skill Decision Tree
 
 ```
-Does the skill need an MCP?
-├── Yes → Use the PLUGIN version
-│   ├── react-dev → react-dev-plugin
-│   ├── frontend-design → frontend-design-plugin
-│   ├── mcp-builder → mcp-builder-plugin
-│   ├── webapp-testing → webapp-testing-plugin
-│   ├── commit-work → git-workflow-plugin
-│   └── video-generator → video-generator-plugin
+Does the skill have a "plugin" field in the index?
+├── Yes → Recommend the PLUGIN version
+│   (read plugins[] from SKILLS_INDEX.json for the full list)
 │
 └── No → Import the standalone skill
     └── cp from ~/.claude/skills/
@@ -186,19 +191,10 @@ Does the skill need an MCP?
 
 ## Available Plugins
 
-**Skill Plugins:**
-- `react-dev-plugin` (context7)
-- `frontend-design-plugin` (context7)
-- `mcp-builder-plugin` (context7)
-- `webapp-testing-plugin` (playwright)
-- `video-generator-plugin` (remotion)
-- `git-workflow-plugin` (github)
+**Read `plugins[]` from SKILLS_INDEX.json** — there are 37 plugins. Do NOT use a hardcoded list. Plugins fall into two categories:
 
-**MCP Wrapper Plugins:**
-- `context7-plugin` (direct context7 access)
-- `playwright-plugin` (direct playwright access)
-- `remotion-plugin` (direct remotion access)
-- `memory-plugin` (direct memory access)
+- **Skill plugins** (have `"skill"` field) — Bundle a skill + optional MCP
+- **MCP wrapper plugins** (skill is `null`) — Direct tool access (context7, playwright, remotion, memory)
 
 ---
 
@@ -223,7 +219,7 @@ Does the skill need an MCP?
 |-------|----------|--------------|
 | mermaid-diagrams | Docs | Document the system architecture |
 
-### Not Relevant (81 skills)
+### Not Relevant (remaining skills)
 [Collapsed list with reasons]
 
 ---
@@ -270,28 +266,15 @@ export ENABLE_TOOL_SEARCH=auto
 4. **NEVER show `--plugin-dir` commands** - Configure MCPs in project's `.mcp.json` instead
 5. **Mention Tool Search** - When recommending multiple plugins
 6. **Prompt user to restart Claude** - MCPs only load on session start
+7. **Companion plugins are suggestions, not imports** — They use `claude plugins add`, not skill copying
+8. **Never recommend companion plugins if Rising Tides covers the need** — e.g., Rising Tides marketing skills cover copywriting/SEO; only suggest Anthropic marketing for enterprise campaign management with Slack/HubSpot connectors
+9. **Companion plugins use HTTP-based MCPs** — No local setup or env vars needed
 
 ---
 
 ## MCP-Enhanced Skills → Plugin Equivalents
 
-| Skill | MCP | Plugin (ALWAYS Use This) |
-|-------|-----|--------------------------|
-| react-dev | context7 | `react-dev-plugin` |
-| frontend-design | context7 | `frontend-design-plugin` |
-| mcp-builder | context7 | `mcp-builder-plugin` |
-| webapp-testing | playwright | `webapp-testing-plugin` |
-| commit-work | github | `git-workflow-plugin` |
-| video-generator | remotion | `video-generator-plugin` |
-
-**Direct MCP Access Plugins:**
-
-| Use Case | Plugin |
-|----------|--------|
-| Pull docs for any library | `context7-plugin` |
-| Browser automation | `playwright-plugin` |
-| Video generation | `remotion-plugin` |
-| Persistent memory | `memory-plugin` |
+**Read from SKILLS_INDEX.json.** Any skill with both `"mcp"` and `"plugin"` fields should be recommended as its plugin. There are 17 MCPs across the system — filter skills where `skill.plugin !== null && skill.mcp !== null` to generate this mapping dynamically.
 
 ---
 

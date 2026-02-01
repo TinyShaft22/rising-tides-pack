@@ -2,11 +2,12 @@
   "meta": {
     "name": "Rising Tides Skills Pack",
     "version": "1.0.0",
-    "lastUpdated": "2026-01-27",
-    "totalSkills": 78,
-    "totalPlugins": 12,
+    "lastUpdated": "2026-01-31",
+    "totalSkills": 196,
+    "totalPlugins": 37,
     "totalCLIs": 9,
-    "totalMCPs": 8
+    "totalMCPs": 17,
+    "totalCompanionPlugins": 11
   },
   "clis": {
     "gh": {
@@ -72,7 +73,10 @@
     "datadog": {
       "name": "Datadog CLI",
       "install": "npx @leoflores/datadog-cli",
-      "env": ["DD_API_KEY", "DD_APP_KEY"],
+      "env": [
+        "DD_API_KEY",
+        "DD_APP_KEY"
+      ],
       "docs": "https://app.datadoghq.com/organization-settings/api-keys"
     }
   },
@@ -83,7 +87,10 @@
       "install": "npx -y @upstash/context7-mcp",
       "config": {
         "command": "npx",
-        "args": ["-y", "@upstash/context7-mcp"]
+        "args": [
+          "-y",
+          "@upstash/context7-mcp"
+        ]
       }
     },
     "playwright": {
@@ -92,7 +99,10 @@
       "install": "npx -y @playwright/mcp",
       "config": {
         "command": "npx",
-        "args": ["-y", "@playwright/mcp"]
+        "args": [
+          "-y",
+          "@playwright/mcp"
+        ]
       }
     },
     "remotion": {
@@ -101,7 +111,10 @@
       "install": "npx -y @anthropic-ai/mcp-server-remotion",
       "config": {
         "command": "npx",
-        "args": ["-y", "@anthropic-ai/mcp-server-remotion"]
+        "args": [
+          "-y",
+          "@anthropic-ai/mcp-server-remotion"
+        ]
       }
     },
     "github": {
@@ -110,7 +123,10 @@
       "install": "npx -y @anthropic-ai/mcp-server-github",
       "config": {
         "command": "npx",
-        "args": ["-y", "@anthropic-ai/mcp-server-github"]
+        "args": [
+          "-y",
+          "@anthropic-ai/mcp-server-github"
+        ]
       }
     },
     "memory": {
@@ -119,7 +135,10 @@
       "install": "npx -y @modelcontextprotocol/server-memory",
       "config": {
         "command": "npx",
-        "args": ["-y", "@modelcontextprotocol/server-memory"]
+        "args": [
+          "-y",
+          "@modelcontextprotocol/server-memory"
+        ]
       }
     },
     "claude-in-chrome": {
@@ -134,7 +153,10 @@
       "install": "npx -y @jpisnice/shadcn-ui-mcp-server",
       "config": {
         "command": "npx",
-        "args": ["-y", "@jpisnice/shadcn-ui-mcp-server"]
+        "args": [
+          "-y",
+          "@jpisnice/shadcn-ui-mcp-server"
+        ]
       }
     },
     "perplexity": {
@@ -143,7 +165,139 @@
       "install": "npx -y @jschuller/perplexity-mcp",
       "config": {
         "command": "npx",
-        "args": ["-y", "@jschuller/perplexity-mcp"]
+        "args": [
+          "-y",
+          "@jschuller/perplexity-mcp"
+        ]
+      }
+    },
+    "docker": {
+      "name": "Docker MCP",
+      "purpose": "Container management, image operations, Docker Compose",
+      "install": "npx -y mcp-server-docker",
+      "config": {
+        "command": "npx",
+        "args": [
+          "-y",
+          "mcp-server-docker"
+        ]
+      }
+    },
+    "github-actions": {
+      "name": "GitHub Actions MCP",
+      "purpose": "Manage workflows, trigger runs, view logs",
+      "install": "npx -y github-actions-mcp-server",
+      "config": {
+        "command": "npx",
+        "args": [
+          "-y",
+          "github-actions-mcp-server"
+        ],
+        "env": {
+          "GITHUB_TOKEN": "${GITHUB_TOKEN}"
+        }
+      }
+    },
+    "linear": {
+      "name": "Linear MCP",
+      "purpose": "Issue tracking and project management via Linear",
+      "install": "npx -y @anthropic/mcp-linear",
+      "config": {
+        "command": "npx",
+        "args": [
+          "-y",
+          "@anthropic/mcp-linear"
+        ],
+        "env": {
+          "LINEAR_API_KEY": "${LINEAR_API_KEY}"
+        }
+      }
+    },
+    "postgres": {
+      "name": "PostgreSQL MCP",
+      "purpose": "Direct PostgreSQL database operations",
+      "install": "npx -y @anthropic/mcp-postgres",
+      "config": {
+        "command": "npx",
+        "args": [
+          "-y",
+          "@anthropic/mcp-postgres"
+        ],
+        "env": {
+          "DATABASE_URL": "${DATABASE_URL}"
+        }
+      }
+    },
+    "sentry": {
+      "name": "Sentry MCP",
+      "purpose": "Error monitoring, issue tracking, incident response",
+      "install": "npx -y @anthropic/mcp-sentry",
+      "config": {
+        "command": "npx",
+        "args": [
+          "-y",
+          "@anthropic/mcp-sentry"
+        ],
+        "env": {
+          "SENTRY_AUTH_TOKEN": "${SENTRY_AUTH_TOKEN}"
+        }
+      }
+    },
+    "slack": {
+      "name": "Slack MCP",
+      "purpose": "Slack workspace operations and messaging",
+      "install": "npx -y @anthropic/mcp-slack",
+      "config": {
+        "command": "npx",
+        "args": [
+          "-y",
+          "@anthropic/mcp-slack"
+        ],
+        "env": {
+          "SLACK_BOT_TOKEN": "${SLACK_BOT_TOKEN}"
+        }
+      }
+    },
+    "notion": {
+      "name": "Notion MCP",
+      "purpose": "Notion database and page operations",
+      "install": "npx -y @anthropic/mcp-notion",
+      "config": {
+        "command": "npx",
+        "args": [
+          "-y",
+          "@anthropic/mcp-notion"
+        ],
+        "env": {
+          "NOTION_API_KEY": "${NOTION_API_KEY}"
+        }
+      }
+    },
+    "atlassian": {
+      "name": "Atlassian MCP",
+      "purpose": "Jira and Confluence integration",
+      "install": "docker run -i --rm ghcr.io/sooperset/mcp-atlassian:latest",
+      "config": {
+        "command": "docker",
+        "args": [
+          "run",
+          "-i",
+          "--rm",
+          "ghcr.io/sooperset/mcp-atlassian:latest"
+        ]
+      },
+      "note": "Community MCP - requires Docker"
+    },
+    "chrome-devtools": {
+      "name": "Chrome DevTools MCP",
+      "purpose": "Browser debugging, performance profiling, and network inspection via Chrome DevTools Protocol",
+      "install": "npx -y chrome-devtools-mcp@latest",
+      "config": {
+        "command": "npx",
+        "args": [
+          "-y",
+          "chrome-devtools-mcp@latest"
+        ]
       }
     }
   },
@@ -151,74 +305,253 @@
     {
       "id": "react-dev-plugin",
       "skill": "react-dev",
-      "mcps": ["context7"],
+      "mcps": [
+        "context7"
+      ],
       "purpose": "React development with live docs"
     },
     {
       "id": "frontend-design-plugin",
       "skill": "frontend-design",
-      "mcps": ["context7"],
+      "mcps": [
+        "context7"
+      ],
       "purpose": "Frontend architecture with live docs"
     },
     {
       "id": "frontend-ui-plugin",
       "skill": "frontend-design",
-      "mcps": ["context7", "shadcn"],
+      "mcps": [
+        "context7",
+        "shadcn"
+      ],
       "purpose": "Full frontend with components"
     },
     {
       "id": "mcp-builder-plugin",
       "skill": "mcp-builder",
-      "mcps": ["context7"],
+      "mcps": [
+        "context7"
+      ],
       "purpose": "MCP server development"
     },
     {
       "id": "webapp-testing-plugin",
       "skill": "webapp-testing",
-      "mcps": ["playwright"],
+      "mcps": [
+        "playwright"
+      ],
       "purpose": "E2E testing and browser automation"
     },
     {
       "id": "browser-automation-plugin",
       "skill": "browser-automation",
-      "mcps": ["claude-in-chrome"],
+      "mcps": [
+        "claude-in-chrome"
+      ],
       "purpose": "Full browser control"
     },
     {
       "id": "video-generator-plugin",
       "skill": "video-generator",
-      "mcps": ["remotion"],
+      "mcps": [
+        "remotion"
+      ],
       "purpose": "Programmatic video creation"
     },
     {
       "id": "git-workflow-plugin",
       "skill": "commit-work",
-      "mcps": ["github"],
+      "mcps": [
+        "github"
+      ],
       "purpose": "Git commits and PR management"
     },
     {
       "id": "context7-plugin",
       "skill": null,
-      "mcps": ["context7"],
+      "mcps": [
+        "context7"
+      ],
       "purpose": "Direct docs access for any library"
     },
     {
       "id": "playwright-plugin",
       "skill": null,
-      "mcps": ["playwright"],
+      "mcps": [
+        "playwright"
+      ],
       "purpose": "Direct browser automation"
     },
     {
       "id": "remotion-plugin",
       "skill": null,
-      "mcps": ["remotion"],
+      "mcps": [
+        "remotion"
+      ],
       "purpose": "Direct video generation tools"
     },
     {
       "id": "memory-plugin",
       "skill": null,
-      "mcps": ["memory"],
+      "mcps": [
+        "memory"
+      ],
       "purpose": "Direct memory management"
+    },
+    {
+      "id": "docker-plugin",
+      "skill": "docker-management",
+      "mcps": [
+        "docker"
+      ],
+      "purpose": "Docker container management"
+    },
+    {
+      "id": "github-actions-plugin",
+      "skill": "github-actions-management",
+      "mcps": [
+        "github-actions"
+      ],
+      "purpose": "GitHub Actions workflow management"
+    },
+    {
+      "id": "security-audit-context-plugin",
+      "skill": "security-audit-context",
+      "mcps": [],
+      "purpose": "Security audit context building"
+    },
+    {
+      "id": "security-burpsuite-parser-plugin",
+      "skill": "security-burpsuite-parser",
+      "mcps": [],
+      "purpose": "Burp Suite project file parsing"
+    },
+    {
+      "id": "security-differential-review-plugin",
+      "skill": "security-differential-review",
+      "mcps": [],
+      "purpose": "Security-focused differential code review"
+    },
+    {
+      "id": "security-entry-points-plugin",
+      "skill": "security-entry-points",
+      "mcps": [],
+      "purpose": "Smart contract entry point analysis"
+    },
+    {
+      "id": "security-firebase-apk-plugin",
+      "skill": "security-firebase-apk",
+      "mcps": [],
+      "purpose": "Firebase APK security scanning"
+    },
+    {
+      "id": "security-fix-review-plugin",
+      "skill": "security-fix-review",
+      "mcps": [],
+      "purpose": "Security fix verification"
+    },
+    {
+      "id": "semgrep-rule-variants-plugin",
+      "skill": "semgrep-rule-variants",
+      "mcps": [],
+      "purpose": "Semgrep rule language variants"
+    },
+    {
+      "id": "security-sharp-edges-plugin",
+      "skill": "security-sharp-edges",
+      "mcps": [],
+      "purpose": "Error-prone API identification"
+    },
+    {
+      "id": "security-spec-compliance-plugin",
+      "skill": "security-spec-compliance",
+      "mcps": [],
+      "purpose": "Spec-to-code compliance checking"
+    },
+    {
+      "id": "security-static-analysis-plugin",
+      "skill": "security-static-analysis",
+      "mcps": [],
+      "purpose": "Static analysis with CodeQL and Semgrep"
+    },
+    {
+      "id": "security-testing-handbook-plugin",
+      "skill": "security-testing-handbook",
+      "mcps": [],
+      "purpose": "Application security testing handbook"
+    },
+    {
+      "id": "security-variant-analysis-plugin",
+      "skill": "security-variant-analysis",
+      "mcps": [],
+      "purpose": "Vulnerability variant analysis"
+    },
+    {
+      "id": "yara-rule-authoring-plugin",
+      "skill": "yara-rule-authoring",
+      "mcps": [],
+      "purpose": "YARA detection rule authoring"
+    },
+    {
+      "id": "ask-questions-first-plugin",
+      "skill": "ask-questions-first",
+      "mcps": [],
+      "purpose": "Clarify requirements before implementing"
+    },
+    {
+      "id": "security-smart-contracts-plugin",
+      "skill": "security-smart-contracts",
+      "mcps": [],
+      "purpose": "Secure smart contract development"
+    },
+    {
+      "id": "culture-index-plugin",
+      "skill": "culture-index",
+      "mcps": [],
+      "purpose": "Culture Index survey interpretation"
+    },
+    {
+      "id": "dwarf-expert-plugin",
+      "skill": "dwarf-expert",
+      "mcps": [],
+      "purpose": "DWARF debugging format expertise"
+    },
+    {
+      "id": "security-insecure-defaults-plugin",
+      "skill": "security-insecure-defaults",
+      "mcps": [],
+      "purpose": "Insecure default detection"
+    },
+    {
+      "id": "modern-python-plugin",
+      "skill": "modern-python",
+      "mcps": [],
+      "purpose": "Modern Python best practices"
+    },
+    {
+      "id": "property-based-testing-plugin",
+      "skill": "property-based-testing",
+      "mcps": [],
+      "purpose": "Property-based testing guidance"
+    },
+    {
+      "id": "semgrep-rule-creator-plugin",
+      "skill": "semgrep-rule-creator",
+      "mcps": [],
+      "purpose": "Custom Semgrep rule creation"
+    },
+    {
+      "id": "security-timing-analysis-plugin",
+      "skill": "security-timing-analysis",
+      "mcps": [],
+      "purpose": "Timing side-channel detection"
+    },
+    {
+      "id": "security-chrome-troubleshooting-plugin",
+      "skill": "security-chrome-troubleshooting",
+      "mcps": [],
+      "purpose": "Claude in Chrome MCP troubleshooting"
     }
   ],
   "categories": {
@@ -234,14 +567,24 @@
     "design": "Visual design, themes, video, presentations",
     "architecture": "C4, MCP building, plugins, skills",
     "integrations": "External AI, monitoring, project management",
-    "utilities": "Naming, domains, web scraping, humanizer"
+    "utilities": "Naming, domains, web scraping, humanizer",
+    "security": "Security auditing, vulnerability analysis, secure coding",
+    "devops": "CI/CD, containers, orchestration, infrastructure",
+    "testing": "Test patterns, E2E, property-based, unit testing",
+    "languages": "Language-specific expertise and best practices",
+    "ai-ml": "Machine learning, RAG, prompt engineering, fine-tuning"
   },
   "skills": [
     {
       "id": "ab-test-setup",
       "name": "A/B Test Setup",
       "category": "cro",
-      "triggers": ["a/b test", "experiment", "split test", "variant"],
+      "triggers": [
+        "a/b test",
+        "experiment",
+        "split test",
+        "variant"
+      ],
       "cli": null,
       "mcp": null,
       "plugin": null,
@@ -251,7 +594,13 @@
       "id": "analytics-tracking",
       "name": "Analytics Tracking",
       "category": "marketing",
-      "triggers": ["analytics", "tracking", "measurement", "GA4", "events"],
+      "triggers": [
+        "analytics",
+        "tracking",
+        "measurement",
+        "GA4",
+        "events"
+      ],
       "cli": null,
       "mcp": null,
       "plugin": null,
@@ -261,7 +610,12 @@
       "id": "backend-to-frontend-handoff-docs",
       "name": "Backend to Frontend Handoff",
       "category": "documentation",
-      "triggers": ["API handoff", "backend docs", "frontend integration", "API documentation"],
+      "triggers": [
+        "API handoff",
+        "backend docs",
+        "frontend integration",
+        "API documentation"
+      ],
       "cli": null,
       "mcp": null,
       "plugin": null,
@@ -271,7 +625,12 @@
       "id": "brand-guidelines",
       "name": "Brand Guidelines",
       "category": "design",
-      "triggers": ["brand", "brand colors", "typography", "brand identity"],
+      "triggers": [
+        "brand",
+        "brand colors",
+        "typography",
+        "brand identity"
+      ],
       "cli": null,
       "mcp": null,
       "plugin": null,
@@ -281,7 +640,12 @@
       "id": "c4-architecture",
       "name": "C4 Architecture",
       "category": "architecture",
-      "triggers": ["C4", "architecture diagram", "system context", "container diagram"],
+      "triggers": [
+        "C4",
+        "architecture diagram",
+        "system context",
+        "container diagram"
+      ],
       "cli": null,
       "mcp": null,
       "plugin": null,
@@ -291,7 +655,13 @@
       "id": "canvas-design",
       "name": "Canvas Design",
       "category": "design",
-      "triggers": ["canvas", "visual art", "png", "pdf design", "graphic"],
+      "triggers": [
+        "canvas",
+        "visual art",
+        "png",
+        "pdf design",
+        "graphic"
+      ],
       "cli": null,
       "mcp": null,
       "plugin": null,
@@ -301,7 +671,11 @@
       "id": "command-creator",
       "name": "Command Creator",
       "category": "architecture",
-      "triggers": ["create command", "slash command", "CLI command"],
+      "triggers": [
+        "create command",
+        "slash command",
+        "CLI command"
+      ],
       "cli": null,
       "mcp": null,
       "plugin": null,
@@ -311,7 +685,12 @@
       "id": "commit-work",
       "name": "Commit Work",
       "category": "workflow",
-      "triggers": ["commit", "git commit", "stage changes", "commit message"],
+      "triggers": [
+        "commit",
+        "git commit",
+        "stage changes",
+        "commit message"
+      ],
       "cli": "gh",
       "mcp": "github",
       "plugin": "git-workflow-plugin",
@@ -321,7 +700,12 @@
       "id": "competitor-alternatives",
       "name": "Competitor Alternatives",
       "category": "marketing",
-      "triggers": ["competitor", "alternatives", "comparison", "vs page"],
+      "triggers": [
+        "competitor",
+        "alternatives",
+        "comparison",
+        "vs page"
+      ],
       "cli": null,
       "mcp": null,
       "plugin": null,
@@ -331,7 +715,12 @@
       "id": "copy-editing",
       "name": "Copy Editing",
       "category": "marketing",
-      "triggers": ["edit copy", "review copy", "improve copy", "copy feedback"],
+      "triggers": [
+        "edit copy",
+        "review copy",
+        "improve copy",
+        "copy feedback"
+      ],
       "cli": null,
       "mcp": null,
       "plugin": null,
@@ -341,7 +730,13 @@
       "id": "copywriting",
       "name": "Copywriting",
       "category": "marketing",
-      "triggers": ["copywriting", "marketing copy", "headlines", "CTAs", "landing page copy"],
+      "triggers": [
+        "copywriting",
+        "marketing copy",
+        "headlines",
+        "CTAs",
+        "landing page copy"
+      ],
       "cli": null,
       "mcp": null,
       "plugin": null,
@@ -351,7 +746,12 @@
       "id": "crafting-effective-readmes",
       "name": "Crafting Effective READMEs",
       "category": "documentation",
-      "triggers": ["README", "readme", "project documentation", "repo docs"],
+      "triggers": [
+        "README",
+        "readme",
+        "project documentation",
+        "repo docs"
+      ],
       "cli": null,
       "mcp": null,
       "plugin": null,
@@ -361,9 +761,15 @@
       "id": "daily-meeting-update",
       "name": "Daily Meeting Update",
       "category": "communication",
-      "triggers": ["daily", "standup", "scrum", "meeting update", "status update"],
+      "triggers": [
+        "daily",
+        "standup",
+        "scrum",
+        "meeting update",
+        "status update"
+      ],
       "cli": null,
-      "mcp": null,
+      "mcp": "linear",
       "plugin": null,
       "source": "softaworks"
     },
@@ -371,9 +777,15 @@
       "id": "database-schema-designer",
       "name": "Database Schema Designer",
       "category": "backend",
-      "triggers": ["schema", "database design", "ERD", "tables", "SQL schema"],
+      "triggers": [
+        "schema",
+        "database design",
+        "ERD",
+        "tables",
+        "SQL schema"
+      ],
       "cli": null,
-      "mcp": null,
+      "mcp": "postgres",
       "plugin": null,
       "source": "softaworks"
     },
@@ -381,7 +793,14 @@
       "id": "datadog-cli",
       "name": "Datadog CLI",
       "category": "integrations",
-      "triggers": ["datadog", "logs", "metrics", "monitoring", "incident", "observability"],
+      "triggers": [
+        "datadog",
+        "logs",
+        "metrics",
+        "monitoring",
+        "incident",
+        "observability"
+      ],
       "cli": "datadog",
       "mcp": null,
       "plugin": null,
@@ -391,7 +810,12 @@
       "id": "dependency-updater",
       "name": "Dependency Updater",
       "category": "workflow",
-      "triggers": ["update dependencies", "npm update", "outdated", "upgrade packages"],
+      "triggers": [
+        "update dependencies",
+        "npm update",
+        "outdated",
+        "upgrade packages"
+      ],
       "cli": null,
       "mcp": null,
       "plugin": null,
@@ -401,7 +825,12 @@
       "id": "design-system-starter",
       "name": "Design System Starter",
       "category": "frontend",
-      "triggers": ["design system", "design tokens", "component library", "style guide"],
+      "triggers": [
+        "design system",
+        "design tokens",
+        "component library",
+        "style guide"
+      ],
       "cli": null,
       "mcp": null,
       "plugin": null,
@@ -411,7 +840,12 @@
       "id": "difficult-workplace-conversations",
       "name": "Difficult Workplace Conversations",
       "category": "communication",
-      "triggers": ["difficult conversation", "conflict", "performance", "tough feedback"],
+      "triggers": [
+        "difficult conversation",
+        "conflict",
+        "performance",
+        "tough feedback"
+      ],
       "cli": null,
       "mcp": null,
       "plugin": null,
@@ -421,7 +855,12 @@
       "id": "docx",
       "name": "DOCX",
       "category": "documentation",
-      "triggers": ["docx", "word", "word document", ".docx"],
+      "triggers": [
+        "docx",
+        "word",
+        "word document",
+        ".docx"
+      ],
       "cli": null,
       "mcp": null,
       "plugin": null,
@@ -431,7 +870,13 @@
       "id": "drizzle-orm",
       "name": "Drizzle ORM",
       "category": "backend",
-      "triggers": ["drizzle", "ORM", "drizzle-orm", "TypeScript ORM", "postgres"],
+      "triggers": [
+        "drizzle",
+        "ORM",
+        "drizzle-orm",
+        "TypeScript ORM",
+        "postgres"
+      ],
       "cli": null,
       "mcp": null,
       "plugin": null,
@@ -441,7 +886,12 @@
       "id": "email-sequence",
       "name": "Email Sequence",
       "category": "marketing",
-      "triggers": ["email sequence", "drip campaign", "email flow", "nurture sequence"],
+      "triggers": [
+        "email sequence",
+        "drip campaign",
+        "email flow",
+        "nurture sequence"
+      ],
       "cli": null,
       "mcp": null,
       "plugin": null,
@@ -451,7 +901,13 @@
       "id": "excalidraw",
       "name": "Excalidraw",
       "category": "documentation",
-      "triggers": ["excalidraw", "whiteboard", "diagram", "sketch", "flowchart"],
+      "triggers": [
+        "excalidraw",
+        "whiteboard",
+        "diagram",
+        "sketch",
+        "flowchart"
+      ],
       "cli": null,
       "mcp": null,
       "plugin": null,
@@ -461,7 +917,12 @@
       "id": "feedback-mastery",
       "name": "Feedback Mastery",
       "category": "communication",
-      "triggers": ["feedback", "constructive feedback", "giving feedback", "receiving feedback"],
+      "triggers": [
+        "feedback",
+        "constructive feedback",
+        "giving feedback",
+        "receiving feedback"
+      ],
       "cli": null,
       "mcp": null,
       "plugin": null,
@@ -471,7 +932,13 @@
       "id": "firebase-guide",
       "name": "Firebase Guide",
       "category": "backend",
-      "triggers": ["firebase", "firestore", "firebase auth", "firebase hosting", "cloud functions"],
+      "triggers": [
+        "firebase",
+        "firestore",
+        "firebase auth",
+        "firebase hosting",
+        "cloud functions"
+      ],
       "cli": "firebase",
       "mcp": null,
       "plugin": null,
@@ -481,7 +948,12 @@
       "id": "form-cro",
       "name": "Form CRO",
       "category": "cro",
-      "triggers": ["form optimization", "form conversion", "form UX", "form fields"],
+      "triggers": [
+        "form optimization",
+        "form conversion",
+        "form UX",
+        "form fields"
+      ],
       "cli": null,
       "mcp": null,
       "plugin": null,
@@ -491,7 +963,12 @@
       "id": "free-tool-strategy",
       "name": "Free Tool Strategy",
       "category": "marketing",
-      "triggers": ["free tool", "lead magnet", "freemium", "free product"],
+      "triggers": [
+        "free tool",
+        "lead magnet",
+        "freemium",
+        "free product"
+      ],
       "cli": null,
       "mcp": null,
       "plugin": null,
@@ -501,7 +978,11 @@
       "id": "frontend-design",
       "name": "Frontend Design",
       "category": "frontend",
-      "triggers": ["frontend architecture", "component design", "UI architecture"],
+      "triggers": [
+        "frontend architecture",
+        "component design",
+        "UI architecture"
+      ],
       "cli": null,
       "mcp": "context7",
       "plugin": "frontend-design-plugin",
@@ -511,7 +992,12 @@
       "id": "frontend-to-backend-requirements",
       "name": "Frontend to Backend Requirements",
       "category": "documentation",
-      "triggers": ["frontend requirements", "API requirements", "backend spec", "data needs"],
+      "triggers": [
+        "frontend requirements",
+        "API requirements",
+        "backend spec",
+        "data needs"
+      ],
       "cli": null,
       "mcp": null,
       "plugin": null,
@@ -521,7 +1007,15 @@
       "id": "github-workflow",
       "name": "GitHub Workflow",
       "category": "workflow",
-      "triggers": ["github", "gh", "create repo", "push to remote", "PR", "release", "tag"],
+      "triggers": [
+        "github",
+        "gh",
+        "create repo",
+        "push to remote",
+        "PR",
+        "release",
+        "tag"
+      ],
       "cli": "gh",
       "mcp": null,
       "plugin": null,
@@ -531,7 +1025,13 @@
       "id": "google-cloud-setup",
       "name": "Google Cloud Setup",
       "category": "deployment",
-      "triggers": ["gcloud", "google cloud", "cloud run", "GCP", "cloud functions"],
+      "triggers": [
+        "gcloud",
+        "google cloud",
+        "cloud run",
+        "GCP",
+        "cloud functions"
+      ],
       "cli": "gcloud",
       "mcp": null,
       "plugin": null,
@@ -541,7 +1041,12 @@
       "id": "humanizer",
       "name": "Humanizer",
       "category": "utilities",
-      "triggers": ["humanize", "AI detection", "natural writing", "human-like"],
+      "triggers": [
+        "humanize",
+        "AI detection",
+        "natural writing",
+        "human-like"
+      ],
       "cli": null,
       "mcp": null,
       "plugin": null,
@@ -551,7 +1056,13 @@
       "id": "jira",
       "name": "Jira",
       "category": "integrations",
-      "triggers": ["jira", "ticket", "issue", "sprint", "PROJ-123"],
+      "triggers": [
+        "jira",
+        "ticket",
+        "issue",
+        "sprint",
+        "PROJ-123"
+      ],
       "cli": "jira",
       "mcp": "atlassian",
       "plugin": null,
@@ -561,7 +1072,12 @@
       "id": "launch-strategy",
       "name": "Launch Strategy",
       "category": "marketing",
-      "triggers": ["launch", "product launch", "release strategy", "go-to-market"],
+      "triggers": [
+        "launch",
+        "product launch",
+        "release strategy",
+        "go-to-market"
+      ],
       "cli": null,
       "mcp": null,
       "plugin": null,
@@ -571,7 +1087,13 @@
       "id": "marketing-psychology",
       "name": "Marketing Psychology",
       "category": "marketing",
-      "triggers": ["psychology", "behavioral", "persuasion", "mental models", "consumer behavior"],
+      "triggers": [
+        "psychology",
+        "behavioral",
+        "persuasion",
+        "mental models",
+        "consumer behavior"
+      ],
       "cli": null,
       "mcp": null,
       "plugin": null,
@@ -581,7 +1103,12 @@
       "id": "marp-slide",
       "name": "Marp Slide",
       "category": "design",
-      "triggers": ["marp", "markdown slides", "presentation", "slide deck"],
+      "triggers": [
+        "marp",
+        "markdown slides",
+        "presentation",
+        "slide deck"
+      ],
       "cli": null,
       "mcp": null,
       "plugin": null,
@@ -591,7 +1118,12 @@
       "id": "mcp-builder",
       "name": "MCP Builder",
       "category": "architecture",
-      "triggers": ["MCP", "MCP server", "model context protocol", "build MCP"],
+      "triggers": [
+        "MCP",
+        "MCP server",
+        "model context protocol",
+        "build MCP"
+      ],
       "cli": null,
       "mcp": "context7",
       "plugin": "mcp-builder-plugin",
@@ -601,7 +1133,12 @@
       "id": "meme-factory",
       "name": "Meme Factory",
       "category": "design",
-      "triggers": ["meme", "memes", "memegen", "humor"],
+      "triggers": [
+        "meme",
+        "memes",
+        "memegen",
+        "humor"
+      ],
       "cli": null,
       "mcp": null,
       "plugin": null,
@@ -611,7 +1148,13 @@
       "id": "mermaid-diagrams",
       "name": "Mermaid Diagrams",
       "category": "documentation",
-      "triggers": ["mermaid", "diagram", "flowchart", "sequence diagram", "class diagram"],
+      "triggers": [
+        "mermaid",
+        "diagram",
+        "flowchart",
+        "sequence diagram",
+        "class diagram"
+      ],
       "cli": null,
       "mcp": null,
       "plugin": null,
@@ -621,7 +1164,12 @@
       "id": "netlify-deployment",
       "name": "Netlify Deployment",
       "category": "deployment",
-      "triggers": ["netlify", "netlify deploy", "netlify functions", "netlify env"],
+      "triggers": [
+        "netlify",
+        "netlify deploy",
+        "netlify functions",
+        "netlify env"
+      ],
       "cli": "netlify",
       "mcp": null,
       "plugin": null,
@@ -631,7 +1179,13 @@
       "id": "oauth-setup",
       "name": "OAuth Setup",
       "category": "backend",
-      "triggers": ["OAuth", "social login", "Google auth", "GitHub auth", "NextAuth"],
+      "triggers": [
+        "OAuth",
+        "social login",
+        "Google auth",
+        "GitHub auth",
+        "NextAuth"
+      ],
       "cli": null,
       "mcp": null,
       "plugin": null,
@@ -641,7 +1195,12 @@
       "id": "onboarding-cro",
       "name": "Onboarding CRO",
       "category": "cro",
-      "triggers": ["onboarding", "user activation", "first-run", "time-to-value"],
+      "triggers": [
+        "onboarding",
+        "user activation",
+        "first-run",
+        "time-to-value"
+      ],
       "cli": null,
       "mcp": null,
       "plugin": null,
@@ -651,7 +1210,13 @@
       "id": "openapi-to-typescript",
       "name": "OpenAPI to TypeScript",
       "category": "backend",
-      "triggers": ["OpenAPI", "swagger", "API types", "TypeScript types", "codegen"],
+      "triggers": [
+        "OpenAPI",
+        "swagger",
+        "API types",
+        "TypeScript types",
+        "codegen"
+      ],
       "cli": null,
       "mcp": null,
       "plugin": null,
@@ -661,7 +1226,12 @@
       "id": "page-cro",
       "name": "Page CRO",
       "category": "cro",
-      "triggers": ["landing page", "page optimization", "conversion", "page CRO"],
+      "triggers": [
+        "landing page",
+        "page optimization",
+        "conversion",
+        "page CRO"
+      ],
       "cli": null,
       "mcp": null,
       "plugin": null,
@@ -671,7 +1241,13 @@
       "id": "paid-ads",
       "name": "Paid Ads",
       "category": "marketing",
-      "triggers": ["paid ads", "Google Ads", "Meta ads", "PPC", "advertising"],
+      "triggers": [
+        "paid ads",
+        "Google Ads",
+        "Meta ads",
+        "PPC",
+        "advertising"
+      ],
       "cli": null,
       "mcp": null,
       "plugin": null,
@@ -681,7 +1257,13 @@
       "id": "paywall-upgrade-cro",
       "name": "Paywall Upgrade CRO",
       "category": "cro",
-      "triggers": ["paywall", "upgrade", "upsell", "pricing modal", "feature gate"],
+      "triggers": [
+        "paywall",
+        "upgrade",
+        "upsell",
+        "pricing modal",
+        "feature gate"
+      ],
       "cli": null,
       "mcp": null,
       "plugin": null,
@@ -691,7 +1273,13 @@
       "id": "pdf",
       "name": "PDF",
       "category": "documentation",
-      "triggers": ["pdf", "PDF", "extract pdf", "create pdf", "merge pdf"],
+      "triggers": [
+        "pdf",
+        "PDF",
+        "extract pdf",
+        "create pdf",
+        "merge pdf"
+      ],
       "cli": null,
       "mcp": null,
       "plugin": null,
@@ -701,7 +1289,13 @@
       "id": "perplexity",
       "name": "Perplexity",
       "category": "integrations",
-      "triggers": ["search", "find", "look up", "research", "what's the latest"],
+      "triggers": [
+        "search",
+        "find",
+        "look up",
+        "research",
+        "what's the latest"
+      ],
       "cli": null,
       "mcp": "perplexity",
       "plugin": null,
@@ -711,7 +1305,12 @@
       "id": "plugin-forge",
       "name": "Plugin Forge",
       "category": "architecture",
-      "triggers": ["plugin", "create plugin", "plugin manifest", "marketplace"],
+      "triggers": [
+        "plugin",
+        "create plugin",
+        "plugin manifest",
+        "marketplace"
+      ],
       "cli": null,
       "mcp": null,
       "plugin": null,
@@ -721,7 +1320,13 @@
       "id": "popup-cro",
       "name": "Popup CRO",
       "category": "cro",
-      "triggers": ["popup", "modal", "overlay", "slide-in", "banner"],
+      "triggers": [
+        "popup",
+        "modal",
+        "overlay",
+        "slide-in",
+        "banner"
+      ],
       "cli": null,
       "mcp": null,
       "plugin": null,
@@ -731,7 +1336,13 @@
       "id": "pptx",
       "name": "PPTX",
       "category": "documentation",
-      "triggers": ["pptx", "powerpoint", "presentation", ".pptx", "slides"],
+      "triggers": [
+        "pptx",
+        "powerpoint",
+        "presentation",
+        ".pptx",
+        "slides"
+      ],
       "cli": null,
       "mcp": null,
       "plugin": null,
@@ -741,7 +1352,12 @@
       "id": "pricing-strategy",
       "name": "Pricing Strategy",
       "category": "marketing",
-      "triggers": ["pricing", "pricing model", "monetization", "price point"],
+      "triggers": [
+        "pricing",
+        "pricing model",
+        "monetization",
+        "price point"
+      ],
       "cli": null,
       "mcp": null,
       "plugin": null,
@@ -751,9 +1367,14 @@
       "id": "professional-communication",
       "name": "Professional Communication",
       "category": "communication",
-      "triggers": ["professional email", "business writing", "team messaging", "formal communication"],
+      "triggers": [
+        "professional email",
+        "business writing",
+        "team messaging",
+        "formal communication"
+      ],
       "cli": null,
-      "mcp": null,
+      "mcp": "slack",
       "plugin": null,
       "source": "softaworks"
     },
@@ -761,7 +1382,12 @@
       "id": "programmatic-seo",
       "name": "Programmatic SEO",
       "category": "marketing",
-      "triggers": ["programmatic SEO", "pSEO", "template pages", "automated SEO"],
+      "triggers": [
+        "programmatic SEO",
+        "pSEO",
+        "template pages",
+        "automated SEO"
+      ],
       "cli": null,
       "mcp": null,
       "plugin": null,
@@ -771,7 +1397,13 @@
       "id": "qa-test-planner",
       "name": "QA Test Planner",
       "category": "workflow",
-      "triggers": ["test plan", "QA", "test cases", "regression", "bug report"],
+      "triggers": [
+        "test plan",
+        "QA",
+        "test cases",
+        "regression",
+        "bug report"
+      ],
       "cli": null,
       "mcp": null,
       "plugin": null,
@@ -781,7 +1413,11 @@
       "id": "react-best-practices",
       "name": "React Best Practices",
       "category": "frontend",
-      "triggers": ["react patterns", "react best practices", "react performance"],
+      "triggers": [
+        "react patterns",
+        "react best practices",
+        "react performance"
+      ],
       "cli": null,
       "mcp": null,
       "plugin": null,
@@ -791,7 +1427,12 @@
       "id": "react-dev",
       "name": "React Dev",
       "category": "frontend",
-      "triggers": ["react", "react component", "react development", "TypeScript react"],
+      "triggers": [
+        "react",
+        "react component",
+        "react development",
+        "TypeScript react"
+      ],
       "cli": null,
       "mcp": "context7",
       "plugin": "react-dev-plugin",
@@ -801,7 +1442,11 @@
       "id": "recommend-skills",
       "name": "Recommend Skills",
       "category": "utilities",
-      "triggers": ["recommend skills", "which skills", "skill suggestions"],
+      "triggers": [
+        "recommend skills",
+        "which skills",
+        "skill suggestions"
+      ],
       "cli": null,
       "mcp": null,
       "plugin": null,
@@ -811,9 +1456,14 @@
       "id": "requirements-clarity",
       "name": "Requirements Clarity",
       "category": "workflow",
-      "triggers": ["requirements", "clarify requirements", "ambiguous", "spec"],
+      "triggers": [
+        "requirements",
+        "clarify requirements",
+        "ambiguous",
+        "spec"
+      ],
       "cli": null,
-      "mcp": null,
+      "mcp": "linear",
       "plugin": null,
       "source": "softaworks"
     },
@@ -821,7 +1471,12 @@
       "id": "saas-starter-setup",
       "name": "SaaS Starter Setup",
       "category": "backend",
-      "triggers": ["SaaS starter", "Next.js starter", "boilerplate", "scaffold"],
+      "triggers": [
+        "SaaS starter",
+        "Next.js starter",
+        "boilerplate",
+        "scaffold"
+      ],
       "cli": null,
       "mcp": null,
       "plugin": null,
@@ -831,7 +1486,13 @@
       "id": "saas-from-scratch",
       "name": "SaaS From Scratch",
       "category": "backend",
-      "triggers": ["build saas from scratch", "custom saas", "learn saas stack", "saas tutorial", "manual saas setup"],
+      "triggers": [
+        "build saas from scratch",
+        "custom saas",
+        "learn saas stack",
+        "saas tutorial",
+        "manual saas setup"
+      ],
       "cli": null,
       "mcp": null,
       "plugin": null,
@@ -841,7 +1502,12 @@
       "id": "schema-markup",
       "name": "Schema Markup",
       "category": "marketing",
-      "triggers": ["schema", "structured data", "JSON-LD", "rich snippets"],
+      "triggers": [
+        "schema",
+        "structured data",
+        "JSON-LD",
+        "rich snippets"
+      ],
       "cli": null,
       "mcp": null,
       "plugin": null,
@@ -851,7 +1517,12 @@
       "id": "seo-audit",
       "name": "SEO Audit",
       "category": "marketing",
-      "triggers": ["SEO audit", "SEO review", "SEO analysis", "search optimization"],
+      "triggers": [
+        "SEO audit",
+        "SEO review",
+        "SEO analysis",
+        "search optimization"
+      ],
       "cli": null,
       "mcp": null,
       "plugin": null,
@@ -861,9 +1532,14 @@
       "id": "session-handoff",
       "name": "Session Handoff",
       "category": "workflow",
-      "triggers": ["handoff", "session transfer", "context transfer", "resume tomorrow"],
+      "triggers": [
+        "handoff",
+        "session transfer",
+        "context transfer",
+        "resume tomorrow"
+      ],
       "cli": null,
-      "mcp": null,
+      "mcp": "notion",
       "plugin": null,
       "source": "softaworks"
     },
@@ -871,7 +1547,12 @@
       "id": "signup-flow-cro",
       "name": "Signup Flow CRO",
       "category": "cro",
-      "triggers": ["signup", "registration", "account creation", "trial activation"],
+      "triggers": [
+        "signup",
+        "registration",
+        "account creation",
+        "trial activation"
+      ],
       "cli": null,
       "mcp": null,
       "plugin": null,
@@ -881,7 +1562,11 @@
       "id": "skill-creator",
       "name": "Skill Creator",
       "category": "architecture",
-      "triggers": ["create skill", "new skill", "skill template"],
+      "triggers": [
+        "create skill",
+        "new skill",
+        "skill template"
+      ],
       "cli": null,
       "mcp": null,
       "plugin": null,
@@ -891,7 +1576,11 @@
       "id": "skill-judge",
       "name": "Skill Judge",
       "category": "architecture",
-      "triggers": ["evaluate skill", "skill quality", "skill review"],
+      "triggers": [
+        "evaluate skill",
+        "skill quality",
+        "skill review"
+      ],
       "cli": null,
       "mcp": null,
       "plugin": null,
@@ -901,7 +1590,11 @@
       "id": "skill-safety-check",
       "name": "Skill Safety Check",
       "category": "utilities",
-      "triggers": ["skill safety", "verify skill", "dangerous patterns"],
+      "triggers": [
+        "skill safety",
+        "verify skill",
+        "dangerous patterns"
+      ],
       "cli": null,
       "mcp": null,
       "plugin": null,
@@ -911,7 +1604,13 @@
       "id": "stripe-integration",
       "name": "Stripe Integration",
       "category": "payments",
-      "triggers": ["stripe", "payments", "checkout", "subscription", "billing"],
+      "triggers": [
+        "stripe",
+        "payments",
+        "checkout",
+        "subscription",
+        "billing"
+      ],
       "cli": "stripe",
       "mcp": null,
       "plugin": null,
@@ -921,7 +1620,13 @@
       "id": "supabase-guide",
       "name": "Supabase Guide",
       "category": "backend",
-      "triggers": ["supabase", "database", "auth", "realtime", "edge functions"],
+      "triggers": [
+        "supabase",
+        "database",
+        "auth",
+        "realtime",
+        "edge functions"
+      ],
       "cli": "supabase",
       "mcp": null,
       "plugin": null,
@@ -931,9 +1636,15 @@
       "id": "systematic-debugging",
       "name": "Systematic Debugging",
       "category": "workflow",
-      "triggers": ["debug", "debugging", "root cause", "bug", "investigate"],
+      "triggers": [
+        "debug",
+        "debugging",
+        "root cause",
+        "bug",
+        "investigate"
+      ],
       "cli": null,
-      "mcp": null,
+      "mcp": "sentry",
       "plugin": null,
       "source": "obra"
     },
@@ -941,7 +1652,12 @@
       "id": "theme-factory",
       "name": "Theme Factory",
       "category": "design",
-      "triggers": ["theme", "styling", "color scheme", "dark mode"],
+      "triggers": [
+        "theme",
+        "styling",
+        "color scheme",
+        "dark mode"
+      ],
       "cli": null,
       "mcp": null,
       "plugin": null,
@@ -951,7 +1667,11 @@
       "id": "update-skills-index",
       "name": "Update Skills Index",
       "category": "utilities",
-      "triggers": ["update index", "sync skills", "skills maintenance"],
+      "triggers": [
+        "update index",
+        "sync skills",
+        "skills maintenance"
+      ],
       "cli": null,
       "mcp": null,
       "plugin": null,
@@ -961,7 +1681,13 @@
       "id": "vercel-deployment",
       "name": "Vercel Deployment",
       "category": "deployment",
-      "triggers": ["vercel", "deploy", "preview deployment", "vercel env", "vercel domains"],
+      "triggers": [
+        "vercel",
+        "deploy",
+        "preview deployment",
+        "vercel env",
+        "vercel domains"
+      ],
       "cli": "vercel",
       "mcp": null,
       "plugin": null,
@@ -971,7 +1697,12 @@
       "id": "video-generator",
       "name": "Video Generator",
       "category": "design",
-      "triggers": ["video", "remotion", "programmatic video", "video generation"],
+      "triggers": [
+        "video",
+        "remotion",
+        "programmatic video",
+        "video generation"
+      ],
       "cli": null,
       "mcp": "remotion",
       "plugin": "video-generator-plugin",
@@ -981,9 +1712,14 @@
       "id": "web-design-guidelines",
       "name": "Web Design Guidelines",
       "category": "frontend",
-      "triggers": ["UI review", "accessibility", "web guidelines", "design review"],
+      "triggers": [
+        "UI review",
+        "accessibility",
+        "web guidelines",
+        "design review"
+      ],
       "cli": null,
-      "mcp": null,
+      "mcp": "chrome-devtools",
       "plugin": null,
       "source": "vercel"
     },
@@ -991,7 +1727,12 @@
       "id": "webapp-testing",
       "name": "Webapp Testing",
       "category": "workflow",
-      "triggers": ["E2E", "playwright", "browser testing", "automation"],
+      "triggers": [
+        "E2E",
+        "playwright",
+        "browser testing",
+        "automation"
+      ],
       "cli": null,
       "mcp": "playwright",
       "plugin": "webapp-testing-plugin",
@@ -1001,7 +1742,12 @@
       "id": "writing-clearly-and-concisely",
       "name": "Writing Clearly and Concisely",
       "category": "documentation",
-      "triggers": ["clear writing", "concise", "prose", "documentation writing"],
+      "triggers": [
+        "clear writing",
+        "concise",
+        "prose",
+        "documentation writing"
+      ],
       "cli": null,
       "mcp": null,
       "plugin": null,
@@ -1011,13 +1757,1867 @@
       "id": "xlsx",
       "name": "XLSX",
       "category": "documentation",
-      "triggers": ["xlsx", "excel", "spreadsheet", ".xlsx", "workbook"],
+      "triggers": [
+        "xlsx",
+        "excel",
+        "spreadsheet",
+        ".xlsx",
+        "workbook"
+      ],
       "cli": null,
       "mcp": null,
       "plugin": null,
       "source": "anthropic"
+    },
+    {
+      "id": "companion-plugin-router",
+      "name": "Companion Plugin Router",
+      "category": "utilities",
+      "triggers": [
+        "CRM",
+        "sales pipeline",
+        "deals",
+        "Salesforce",
+        "support tickets",
+        "helpdesk",
+        "Intercom",
+        "contract review",
+        "NDA",
+        "compliance",
+        "legal analysis",
+        "financial analysis",
+        "budget",
+        "forecast",
+        "journal entries",
+        "enterprise search",
+        "knowledge base",
+        "genomics",
+        "lab protocols"
+      ],
+      "cli": null,
+      "mcp": null,
+      "plugin": null,
+      "source": "nickmohler"
+    },
+    {
+      "id": "angular-architect",
+      "name": "Angular Architect",
+      "category": "frontend",
+      "triggers": [
+        "angular architect",
+        "angular",
+        "architect"
+      ],
+      "cli": null,
+      "mcp": null,
+      "plugin": null,
+      "source": "jeffallan"
+    },
+    {
+      "id": "api-designer",
+      "name": "API Designer",
+      "category": "backend",
+      "triggers": [
+        "api designer",
+        "api",
+        "designer"
+      ],
+      "cli": null,
+      "mcp": null,
+      "plugin": null,
+      "source": "jeffallan"
+    },
+    {
+      "id": "architecture-designer",
+      "name": "Architecture Designer",
+      "category": "architecture",
+      "triggers": [
+        "architecture designer",
+        "architecture",
+        "designer"
+      ],
+      "cli": null,
+      "mcp": null,
+      "plugin": null,
+      "source": "jeffallan"
+    },
+    {
+      "id": "ask-questions-first",
+      "name": "Ask Questions First",
+      "category": "workflow",
+      "triggers": [
+        "ask questions first",
+        "ask",
+        "questions",
+        "first"
+      ],
+      "cli": null,
+      "mcp": null,
+      "plugin": "ask-questions-first-plugin",
+      "source": "chriswiles"
+    },
+    {
+      "id": "aws-cost-optimization",
+      "name": "AWS Cost Optimization",
+      "category": "deployment",
+      "triggers": [
+        "aws cost optimization",
+        "aws",
+        "cost",
+        "optimization"
+      ],
+      "cli": null,
+      "mcp": null,
+      "plugin": null,
+      "source": "jeffallan"
+    },
+    {
+      "id": "chaos-engineer",
+      "name": "Chaos Engineer",
+      "category": "devops",
+      "triggers": [
+        "chaos engineer",
+        "chaos",
+        "engineer"
+      ],
+      "cli": null,
+      "mcp": null,
+      "plugin": null,
+      "source": "jeffallan"
+    },
+    {
+      "id": "chrome-extension-troubleshooting",
+      "name": "Chrome Extension Troubleshooting",
+      "category": "workflow",
+      "triggers": [
+        "chrome extension troubleshooting",
+        "chrome",
+        "extension",
+        "troubleshooting"
+      ],
+      "cli": null,
+      "mcp": null,
+      "plugin": null,
+      "source": "chriswiles"
+    },
+    {
+      "id": "cicd-pipelines",
+      "name": "CI/CD Pipelines",
+      "category": "security",
+      "triggers": [
+        "cicd pipelines",
+        "cicd",
+        "pipelines"
+      ],
+      "cli": null,
+      "mcp": null,
+      "plugin": null,
+      "source": "ahmedasmar"
+    },
+    {
+      "id": "cli-developer",
+      "name": "CLI Developer",
+      "category": "frontend",
+      "triggers": [
+        "cli developer",
+        "cli",
+        "developer"
+      ],
+      "cli": null,
+      "mcp": null,
+      "plugin": null,
+      "source": "jeffallan"
+    },
+    {
+      "id": "cloud-architect",
+      "name": "Cloud Architect",
+      "category": "security",
+      "triggers": [
+        "cloud architect",
+        "cloud",
+        "architect"
+      ],
+      "cli": null,
+      "mcp": null,
+      "plugin": null,
+      "source": "jeffallan"
+    },
+    {
+      "id": "code-documenter",
+      "name": "Code Documenter",
+      "category": "documentation",
+      "triggers": [
+        "code documenter",
+        "code",
+        "documenter"
+      ],
+      "cli": null,
+      "mcp": null,
+      "plugin": null,
+      "source": "jeffallan"
+    },
+    {
+      "id": "code-reviewer",
+      "name": "Code Reviewer",
+      "category": "workflow",
+      "triggers": [
+        "code reviewer",
+        "code",
+        "reviewer"
+      ],
+      "cli": null,
+      "mcp": null,
+      "plugin": null,
+      "source": "jeffallan"
+    },
+    {
+      "id": "cpp-pro",
+      "name": "C++ Pro",
+      "category": "frontend",
+      "triggers": [
+        "cpp pro",
+        "cpp",
+        "pro"
+      ],
+      "cli": null,
+      "mcp": null,
+      "plugin": null,
+      "source": "jeffallan"
+    },
+    {
+      "id": "csharp-developer",
+      "name": "C# Developer",
+      "category": "frontend",
+      "triggers": [
+        "csharp developer",
+        "csharp",
+        "developer"
+      ],
+      "cli": null,
+      "mcp": null,
+      "plugin": null,
+      "source": "jeffallan"
+    },
+    {
+      "id": "culture-index",
+      "name": "Culture Index",
+      "category": "utilities",
+      "triggers": [
+        "culture index",
+        "culture",
+        "index"
+      ],
+      "cli": null,
+      "mcp": null,
+      "plugin": "culture-index-plugin",
+      "source": "jeffallan"
+    },
+    {
+      "id": "database-optimizer",
+      "name": "Database Optimizer",
+      "category": "utilities",
+      "triggers": [
+        "database optimizer",
+        "database",
+        "optimizer"
+      ],
+      "cli": null,
+      "mcp": "postgres",
+      "plugin": null,
+      "source": "jeffallan"
+    },
+    {
+      "id": "debugging-wizard",
+      "name": "Debugging Wizard",
+      "category": "workflow",
+      "triggers": [
+        "debugging wizard",
+        "debugging",
+        "wizard"
+      ],
+      "cli": null,
+      "mcp": null,
+      "plugin": null,
+      "source": "jeffallan"
+    },
+    {
+      "id": "design-tokens-patterns",
+      "name": "Design Tokens Patterns",
+      "category": "frontend",
+      "triggers": [
+        "design tokens patterns",
+        "design",
+        "tokens",
+        "patterns"
+      ],
+      "cli": null,
+      "mcp": null,
+      "plugin": null,
+      "source": "chriswiles"
+    },
+    {
+      "id": "devops-engineer",
+      "name": "DevOps Engineer",
+      "category": "devops",
+      "triggers": [
+        "devops engineer",
+        "devops",
+        "engineer"
+      ],
+      "cli": null,
+      "mcp": null,
+      "plugin": null,
+      "source": "jeffallan"
+    },
+    {
+      "id": "devops-terraform",
+      "name": "DevOps Terraform",
+      "category": "devops",
+      "triggers": [
+        "devops terraform",
+        "devops",
+        "terraform"
+      ],
+      "cli": null,
+      "mcp": null,
+      "plugin": null,
+      "source": "ahmedasmar"
+    },
+    {
+      "id": "django-expert",
+      "name": "Django Expert",
+      "category": "frontend",
+      "triggers": [
+        "django expert",
+        "django",
+        "expert"
+      ],
+      "cli": null,
+      "mcp": null,
+      "plugin": null,
+      "source": "jeffallan"
+    },
+    {
+      "id": "docker-management",
+      "name": "Docker Management",
+      "category": "devops",
+      "triggers": [
+        "docker management",
+        "docker",
+        "management"
+      ],
+      "cli": null,
+      "mcp": "docker",
+      "plugin": "docker-plugin",
+      "source": "nickmohler"
+    },
+    {
+      "id": "docker-validation",
+      "name": "Docker Validation",
+      "category": "security",
+      "triggers": [
+        "docker validation",
+        "docker",
+        "validation"
+      ],
+      "cli": null,
+      "mcp": null,
+      "plugin": null,
+      "source": "rknall"
+    },
+    {
+      "id": "dotnet-core-expert",
+      "name": ".NET Core Expert",
+      "category": "frontend",
+      "triggers": [
+        "dotnet core expert",
+        "dotnet",
+        "core",
+        "expert"
+      ],
+      "cli": null,
+      "mcp": null,
+      "plugin": null,
+      "source": "jeffallan"
+    },
+    {
+      "id": "dwarf-expert",
+      "name": "DWARF Expert",
+      "category": "utilities",
+      "triggers": [
+        "dwarf expert",
+        "dwarf",
+        "expert"
+      ],
+      "cli": null,
+      "mcp": null,
+      "plugin": "dwarf-expert-plugin",
+      "source": "jeffallan"
+    },
+    {
+      "id": "embedded-systems",
+      "name": "Embedded Systems",
+      "category": "utilities",
+      "triggers": [
+        "embedded systems",
+        "embedded",
+        "systems"
+      ],
+      "cli": null,
+      "mcp": null,
+      "plugin": null,
+      "source": "jeffallan"
+    },
+    {
+      "id": "fastapi-expert",
+      "name": "FastAPI Expert",
+      "category": "frontend",
+      "triggers": [
+        "fastapi expert",
+        "fastapi",
+        "expert"
+      ],
+      "cli": null,
+      "mcp": null,
+      "plugin": null,
+      "source": "jeffallan"
+    },
+    {
+      "id": "feature-forge",
+      "name": "Feature Forge",
+      "category": "workflow",
+      "triggers": [
+        "feature forge",
+        "feature",
+        "forge"
+      ],
+      "cli": null,
+      "mcp": null,
+      "plugin": null,
+      "source": "chriswiles"
+    },
+    {
+      "id": "fine-tuning-expert",
+      "name": "Fine Tuning Expert",
+      "category": "ai-ml",
+      "triggers": [
+        "fine tuning expert",
+        "fine",
+        "tuning",
+        "expert"
+      ],
+      "cli": null,
+      "mcp": null,
+      "plugin": null,
+      "source": "jeffallan"
+    },
+    {
+      "id": "flutter-expert",
+      "name": "Flutter Expert",
+      "category": "frontend",
+      "triggers": [
+        "flutter expert",
+        "flutter",
+        "expert"
+      ],
+      "cli": null,
+      "mcp": null,
+      "plugin": null,
+      "source": "jeffallan"
+    },
+    {
+      "id": "formik-patterns",
+      "name": "Formik Patterns",
+      "category": "frontend",
+      "triggers": [
+        "formik patterns",
+        "formik",
+        "patterns"
+      ],
+      "cli": null,
+      "mcp": null,
+      "plugin": null,
+      "source": "jeffallan"
+    },
+    {
+      "id": "fullstack-guardian",
+      "name": "Fullstack Guardian",
+      "category": "workflow",
+      "triggers": [
+        "fullstack guardian",
+        "fullstack",
+        "guardian"
+      ],
+      "cli": null,
+      "mcp": null,
+      "plugin": null,
+      "source": "jeffallan"
+    },
+    {
+      "id": "github-actions-management",
+      "name": "GitHub Actions Management",
+      "category": "devops",
+      "triggers": [
+        "github actions management",
+        "github",
+        "actions",
+        "management"
+      ],
+      "cli": null,
+      "mcp": "github-actions",
+      "plugin": "github-actions-plugin",
+      "source": "nickmohler"
+    },
+    {
+      "id": "gitlab-stack-config",
+      "name": "GitLab Stack Config",
+      "category": "devops",
+      "triggers": [
+        "gitlab stack config",
+        "gitlab",
+        "stack",
+        "config"
+      ],
+      "cli": null,
+      "mcp": null,
+      "plugin": null,
+      "source": "rknall"
+    },
+    {
+      "id": "gitlab-stack-creator",
+      "name": "GitLab Stack Creator",
+      "category": "devops",
+      "triggers": [
+        "gitlab stack creator",
+        "gitlab",
+        "stack",
+        "creator"
+      ],
+      "cli": null,
+      "mcp": null,
+      "plugin": null,
+      "source": "rknall"
+    },
+    {
+      "id": "gitlab-stack-secrets",
+      "name": "GitLab Stack Secrets",
+      "category": "devops",
+      "triggers": [
+        "gitlab stack secrets",
+        "gitlab",
+        "stack",
+        "secrets"
+      ],
+      "cli": null,
+      "mcp": null,
+      "plugin": null,
+      "source": "rknall"
+    },
+    {
+      "id": "gitlab-stack-validator",
+      "name": "GitLab Stack Validator",
+      "category": "devops",
+      "triggers": [
+        "gitlab stack validator",
+        "gitlab",
+        "stack",
+        "validator"
+      ],
+      "cli": null,
+      "mcp": null,
+      "plugin": null,
+      "source": "rknall"
+    },
+    {
+      "id": "gitops-workflows",
+      "name": "Gitops Workflows",
+      "category": "devops",
+      "triggers": [
+        "gitops workflows",
+        "gitops",
+        "workflows"
+      ],
+      "cli": null,
+      "mcp": null,
+      "plugin": null,
+      "source": "ahmedasmar"
+    },
+    {
+      "id": "golang-pro",
+      "name": "Go Pro",
+      "category": "frontend",
+      "triggers": [
+        "golang pro",
+        "golang",
+        "pro"
+      ],
+      "cli": null,
+      "mcp": null,
+      "plugin": null,
+      "source": "jeffallan"
+    },
+    {
+      "id": "graphql-architect",
+      "name": "GraphQL Architect",
+      "category": "frontend",
+      "triggers": [
+        "graphql architect",
+        "graphql",
+        "architect"
+      ],
+      "cli": null,
+      "mcp": null,
+      "plugin": null,
+      "source": "jeffallan"
+    },
+    {
+      "id": "graphql-patterns",
+      "name": "GraphQL Patterns",
+      "category": "backend",
+      "triggers": [
+        "graphql patterns",
+        "graphql",
+        "patterns"
+      ],
+      "cli": null,
+      "mcp": null,
+      "plugin": null,
+      "source": "jeffallan"
+    },
+    {
+      "id": "java-architect",
+      "name": "Java Architect",
+      "category": "security",
+      "triggers": [
+        "java architect",
+        "java",
+        "architect"
+      ],
+      "cli": null,
+      "mcp": null,
+      "plugin": null,
+      "source": "jeffallan"
+    },
+    {
+      "id": "javascript-pro",
+      "name": "Javascript Pro",
+      "category": "frontend",
+      "triggers": [
+        "javascript pro",
+        "javascript",
+        "pro"
+      ],
+      "cli": null,
+      "mcp": null,
+      "plugin": null,
+      "source": "jeffallan"
+    },
+    {
+      "id": "jest-testing-patterns",
+      "name": "Jest Testing Patterns",
+      "category": "testing",
+      "triggers": [
+        "jest testing patterns",
+        "jest",
+        "testing",
+        "patterns"
+      ],
+      "cli": null,
+      "mcp": null,
+      "plugin": null,
+      "source": "jeffallan"
+    },
+    {
+      "id": "k8s-troubleshooter",
+      "name": "K8s Troubleshooter",
+      "category": "devops",
+      "triggers": [
+        "k8s troubleshooter",
+        "k8s",
+        "troubleshooter"
+      ],
+      "cli": null,
+      "mcp": null,
+      "plugin": null,
+      "source": "ahmedasmar"
+    },
+    {
+      "id": "kotlin-specialist",
+      "name": "Kotlin Specialist",
+      "category": "frontend",
+      "triggers": [
+        "kotlin specialist",
+        "kotlin",
+        "specialist"
+      ],
+      "cli": null,
+      "mcp": null,
+      "plugin": null,
+      "source": "jeffallan"
+    },
+    {
+      "id": "kubernetes-specialist",
+      "name": "Kubernetes Specialist",
+      "category": "security",
+      "triggers": [
+        "kubernetes specialist",
+        "kubernetes",
+        "specialist"
+      ],
+      "cli": null,
+      "mcp": null,
+      "plugin": null,
+      "source": "jeffallan"
+    },
+    {
+      "id": "laravel-specialist",
+      "name": "Laravel Specialist",
+      "category": "frontend",
+      "triggers": [
+        "laravel specialist",
+        "laravel",
+        "specialist"
+      ],
+      "cli": null,
+      "mcp": null,
+      "plugin": null,
+      "source": "jeffallan"
+    },
+    {
+      "id": "legacy-modernizer",
+      "name": "Legacy Modernizer",
+      "category": "workflow",
+      "triggers": [
+        "legacy modernizer",
+        "legacy",
+        "modernizer"
+      ],
+      "cli": null,
+      "mcp": null,
+      "plugin": null,
+      "source": "jeffallan"
+    },
+    {
+      "id": "mcp-developer",
+      "name": "MCP Developer",
+      "category": "architecture",
+      "triggers": [
+        "mcp developer",
+        "mcp",
+        "developer"
+      ],
+      "cli": null,
+      "mcp": null,
+      "plugin": null,
+      "source": "jeffallan"
+    },
+    {
+      "id": "microservices-architect",
+      "name": "Microservices Architect",
+      "category": "architecture",
+      "triggers": [
+        "microservices architect",
+        "microservices",
+        "architect"
+      ],
+      "cli": null,
+      "mcp": null,
+      "plugin": null,
+      "source": "jeffallan"
+    },
+    {
+      "id": "ml-pipeline",
+      "name": "ML Pipeline",
+      "category": "frontend",
+      "triggers": [
+        "ml pipeline",
+        "pipeline"
+      ],
+      "cli": null,
+      "mcp": null,
+      "plugin": null,
+      "source": "jeffallan"
+    },
+    {
+      "id": "modern-python",
+      "name": "Modern Python",
+      "category": "backend",
+      "triggers": [
+        "modern python",
+        "modern",
+        "python"
+      ],
+      "cli": null,
+      "mcp": null,
+      "plugin": "modern-python-plugin",
+      "source": "jeffallan"
+    },
+    {
+      "id": "monitoring-expert",
+      "name": "Monitoring Expert",
+      "category": "devops",
+      "triggers": [
+        "monitoring expert",
+        "monitoring",
+        "expert"
+      ],
+      "cli": null,
+      "mcp": "sentry",
+      "plugin": null,
+      "source": "jeffallan"
+    },
+    {
+      "id": "monitoring-observability",
+      "name": "Monitoring Observability",
+      "category": "devops",
+      "triggers": [
+        "monitoring observability",
+        "monitoring",
+        "observability"
+      ],
+      "cli": null,
+      "mcp": null,
+      "plugin": null,
+      "source": "ahmedasmar"
+    },
+    {
+      "id": "nestjs-expert",
+      "name": "NestJS Expert",
+      "category": "frontend",
+      "triggers": [
+        "nestjs expert",
+        "nestjs",
+        "expert"
+      ],
+      "cli": null,
+      "mcp": null,
+      "plugin": null,
+      "source": "jeffallan"
+    },
+    {
+      "id": "newt-blueprint",
+      "name": "Newt Blueprint",
+      "category": "devops",
+      "triggers": [
+        "newt blueprint",
+        "newt",
+        "blueprint"
+      ],
+      "cli": null,
+      "mcp": null,
+      "plugin": null,
+      "source": "rknall"
+    },
+    {
+      "id": "nextjs-auth-security",
+      "name": "Next.js Auth Security",
+      "category": "security",
+      "triggers": [
+        "nextjs auth security",
+        "nextjs",
+        "auth",
+        "security",
+        "next.js"
+      ],
+      "cli": null,
+      "mcp": null,
+      "plugin": null,
+      "source": "harperaa"
+    },
+    {
+      "id": "nextjs-csrf-protection",
+      "name": "Next.js CSRF Protection",
+      "category": "security",
+      "triggers": [
+        "nextjs csrf protection",
+        "nextjs",
+        "csrf",
+        "protection",
+        "next.js"
+      ],
+      "cli": null,
+      "mcp": null,
+      "plugin": null,
+      "source": "jeffallan"
+    },
+    {
+      "id": "nextjs-dependency-security",
+      "name": "Next.js Dependency Security",
+      "category": "security",
+      "triggers": [
+        "nextjs dependency security",
+        "nextjs",
+        "dependency",
+        "security",
+        "next.js"
+      ],
+      "cli": null,
+      "mcp": null,
+      "plugin": null,
+      "source": "harperaa"
+    },
+    {
+      "id": "nextjs-error-handling",
+      "name": "Next.js Error Handling",
+      "category": "security",
+      "triggers": [
+        "nextjs error handling",
+        "nextjs",
+        "error",
+        "handling",
+        "next.js"
+      ],
+      "cli": null,
+      "mcp": null,
+      "plugin": null,
+      "source": "jeffallan"
+    },
+    {
+      "id": "nextjs-input-validation",
+      "name": "Next.js Input Validation",
+      "category": "security",
+      "triggers": [
+        "nextjs input validation",
+        "nextjs",
+        "input",
+        "validation",
+        "next.js"
+      ],
+      "cli": null,
+      "mcp": null,
+      "plugin": null,
+      "source": "jeffallan"
+    },
+    {
+      "id": "nextjs-payment-security",
+      "name": "Next.js Payment Security",
+      "category": "security",
+      "triggers": [
+        "nextjs payment security",
+        "nextjs",
+        "payment",
+        "security",
+        "next.js"
+      ],
+      "cli": null,
+      "mcp": null,
+      "plugin": null,
+      "source": "harperaa"
+    },
+    {
+      "id": "nextjs-rate-limiting",
+      "name": "Next.js Rate Limiting",
+      "category": "security",
+      "triggers": [
+        "nextjs rate limiting",
+        "nextjs",
+        "rate",
+        "limiting",
+        "next.js"
+      ],
+      "cli": null,
+      "mcp": null,
+      "plugin": null,
+      "source": "jeffallan"
+    },
+    {
+      "id": "nextjs-security-headers",
+      "name": "Next.js Security Headers",
+      "category": "security",
+      "triggers": [
+        "nextjs security headers",
+        "nextjs",
+        "security",
+        "headers",
+        "next.js"
+      ],
+      "cli": null,
+      "mcp": null,
+      "plugin": null,
+      "source": "harperaa"
+    },
+    {
+      "id": "nextjs-security-operations",
+      "name": "Next.js Security Operations",
+      "category": "security",
+      "triggers": [
+        "nextjs security operations",
+        "nextjs",
+        "security",
+        "operations",
+        "next.js"
+      ],
+      "cli": null,
+      "mcp": null,
+      "plugin": null,
+      "source": "harperaa"
+    },
+    {
+      "id": "nextjs-security-overview",
+      "name": "Next.js Security Overview",
+      "category": "security",
+      "triggers": [
+        "nextjs security overview",
+        "nextjs",
+        "security",
+        "overview",
+        "next.js"
+      ],
+      "cli": null,
+      "mcp": null,
+      "plugin": null,
+      "source": "harperaa"
+    },
+    {
+      "id": "nextjs-security-testing",
+      "name": "Next.js Security Testing",
+      "category": "security",
+      "triggers": [
+        "nextjs security testing",
+        "nextjs",
+        "security",
+        "testing",
+        "next.js"
+      ],
+      "cli": null,
+      "mcp": null,
+      "plugin": null,
+      "source": "harperaa"
+    },
+    {
+      "id": "pandas-pro",
+      "name": "Pandas Pro",
+      "category": "languages",
+      "triggers": [
+        "pandas pro",
+        "pandas",
+        "pro"
+      ],
+      "cli": null,
+      "mcp": null,
+      "plugin": null,
+      "source": "jeffallan"
+    },
+    {
+      "id": "php-pro",
+      "name": "PHP Pro",
+      "category": "frontend",
+      "triggers": [
+        "php pro",
+        "php",
+        "pro"
+      ],
+      "cli": null,
+      "mcp": null,
+      "plugin": null,
+      "source": "jeffallan"
+    },
+    {
+      "id": "playwright-expert",
+      "name": "Playwright Expert",
+      "category": "testing",
+      "triggers": [
+        "playwright expert",
+        "playwright",
+        "expert"
+      ],
+      "cli": null,
+      "mcp": "playwright",
+      "plugin": null,
+      "source": "jeffallan"
+    },
+    {
+      "id": "playwright-patterns",
+      "name": "Playwright Patterns",
+      "category": "testing",
+      "triggers": [
+        "playwright patterns",
+        "playwright",
+        "patterns"
+      ],
+      "cli": null,
+      "mcp": "playwright",
+      "plugin": null,
+      "source": "lackeyjb"
+    },
+    {
+      "id": "prompt-engineer",
+      "name": "Prompt Engineer",
+      "category": "ai-ml",
+      "triggers": [
+        "prompt engineer",
+        "prompt",
+        "engineer"
+      ],
+      "cli": null,
+      "mcp": null,
+      "plugin": null,
+      "source": "jeffallan"
+    },
+    {
+      "id": "property-based-testing",
+      "name": "Property Based Testing",
+      "category": "testing",
+      "triggers": [
+        "property based testing",
+        "property",
+        "based",
+        "testing"
+      ],
+      "cli": null,
+      "mcp": null,
+      "plugin": "property-based-testing-plugin",
+      "source": "jeffallan"
+    },
+    {
+      "id": "python-backend-review",
+      "name": "Python Backend Review",
+      "category": "backend",
+      "triggers": [
+        "python backend review",
+        "python",
+        "backend",
+        "review"
+      ],
+      "cli": null,
+      "mcp": null,
+      "plugin": null,
+      "source": "jeffallan"
+    },
+    {
+      "id": "python-pro",
+      "name": "Python Pro",
+      "category": "testing",
+      "triggers": [
+        "python pro",
+        "python",
+        "pro"
+      ],
+      "cli": null,
+      "mcp": null,
+      "plugin": null,
+      "source": "jeffallan"
+    },
+    {
+      "id": "rag-architect",
+      "name": "RAG Architect",
+      "category": "frontend",
+      "triggers": [
+        "rag architect",
+        "rag",
+        "architect"
+      ],
+      "cli": null,
+      "mcp": null,
+      "plugin": null,
+      "source": "jeffallan"
+    },
+    {
+      "id": "rails-expert",
+      "name": "Rails Expert",
+      "category": "frontend",
+      "triggers": [
+        "rails expert",
+        "rails",
+        "expert"
+      ],
+      "cli": null,
+      "mcp": null,
+      "plugin": null,
+      "source": "jeffallan"
+    },
+    {
+      "id": "react-native-expert",
+      "name": "React Native Expert",
+      "category": "frontend",
+      "triggers": [
+        "react native expert",
+        "react",
+        "native",
+        "expert"
+      ],
+      "cli": null,
+      "mcp": null,
+      "plugin": null,
+      "source": "jeffallan"
+    },
+    {
+      "id": "react-ui-states",
+      "name": "React UI States",
+      "category": "frontend",
+      "triggers": [
+        "react ui states",
+        "react",
+        "states"
+      ],
+      "cli": null,
+      "mcp": null,
+      "plugin": null,
+      "source": "chriswiles"
+    },
+    {
+      "id": "rust-engineer",
+      "name": "Rust Engineer",
+      "category": "frontend",
+      "triggers": [
+        "rust engineer",
+        "rust",
+        "engineer"
+      ],
+      "cli": null,
+      "mcp": null,
+      "plugin": null,
+      "source": "jeffallan"
+    },
+    {
+      "id": "salesforce-developer",
+      "name": "Salesforce Developer",
+      "category": "integrations",
+      "triggers": [
+        "salesforce developer",
+        "salesforce",
+        "developer"
+      ],
+      "cli": null,
+      "mcp": null,
+      "plugin": null,
+      "source": "jeffallan"
+    },
+    {
+      "id": "secure-code-guardian",
+      "name": "Secure Code Guardian",
+      "category": "security",
+      "triggers": [
+        "secure code guardian",
+        "secure",
+        "code",
+        "guardian"
+      ],
+      "cli": null,
+      "mcp": null,
+      "plugin": null,
+      "source": "trailofbits"
+    },
+    {
+      "id": "security-audit-context",
+      "name": "Security Audit Context",
+      "category": "security",
+      "triggers": [
+        "security audit context",
+        "security",
+        "audit",
+        "context"
+      ],
+      "cli": null,
+      "mcp": null,
+      "plugin": "security-audit-context-plugin",
+      "source": "trailofbits"
+    },
+    {
+      "id": "security-burpsuite-parser",
+      "name": "Security Burpsuite Parser",
+      "category": "security",
+      "triggers": [
+        "security burpsuite parser",
+        "security",
+        "burpsuite",
+        "parser"
+      ],
+      "cli": null,
+      "mcp": null,
+      "plugin": "security-burpsuite-parser-plugin",
+      "source": "trailofbits"
+    },
+    {
+      "id": "security-differential-review",
+      "name": "Security Differential Review",
+      "category": "security",
+      "triggers": [
+        "security differential review",
+        "security",
+        "differential",
+        "review"
+      ],
+      "cli": null,
+      "mcp": null,
+      "plugin": "security-differential-review-plugin",
+      "source": "trailofbits"
+    },
+    {
+      "id": "security-entry-points",
+      "name": "Security Entry Points",
+      "category": "security",
+      "triggers": [
+        "security entry points",
+        "security",
+        "entry",
+        "points"
+      ],
+      "cli": null,
+      "mcp": null,
+      "plugin": "security-entry-points-plugin",
+      "source": "trailofbits"
+    },
+    {
+      "id": "security-firebase-apk",
+      "name": "Security Firebase Apk",
+      "category": "security",
+      "triggers": [
+        "security firebase apk",
+        "security",
+        "firebase",
+        "apk"
+      ],
+      "cli": null,
+      "mcp": null,
+      "plugin": "security-firebase-apk-plugin",
+      "source": "trailofbits"
+    },
+    {
+      "id": "security-fix-review",
+      "name": "Security Fix Review",
+      "category": "security",
+      "triggers": [
+        "security fix review",
+        "security",
+        "fix",
+        "review"
+      ],
+      "cli": null,
+      "mcp": null,
+      "plugin": "security-fix-review-plugin",
+      "source": "trailofbits"
+    },
+    {
+      "id": "security-insecure-defaults",
+      "name": "Security Insecure Defaults",
+      "category": "security",
+      "triggers": [
+        "security insecure defaults",
+        "security",
+        "insecure",
+        "defaults"
+      ],
+      "cli": null,
+      "mcp": null,
+      "plugin": "security-insecure-defaults-plugin",
+      "source": "trailofbits"
+    },
+    {
+      "id": "security-sharp-edges",
+      "name": "Security Sharp Edges",
+      "category": "security",
+      "triggers": [
+        "security sharp edges",
+        "security",
+        "sharp",
+        "edges"
+      ],
+      "cli": null,
+      "mcp": null,
+      "plugin": "security-sharp-edges-plugin",
+      "source": "trailofbits"
+    },
+    {
+      "id": "security-smart-contracts",
+      "name": "Security Smart Contracts",
+      "category": "security",
+      "triggers": [
+        "security smart contracts",
+        "security",
+        "smart",
+        "contracts"
+      ],
+      "cli": null,
+      "mcp": null,
+      "plugin": "security-smart-contracts-plugin",
+      "source": "trailofbits"
+    },
+    {
+      "id": "security-spec-compliance",
+      "name": "Security Spec Compliance",
+      "category": "security",
+      "triggers": [
+        "security spec compliance",
+        "security",
+        "spec",
+        "compliance"
+      ],
+      "cli": null,
+      "mcp": null,
+      "plugin": "security-spec-compliance-plugin",
+      "source": "trailofbits"
+    },
+    {
+      "id": "security-static-analysis",
+      "name": "Security Static Analysis",
+      "category": "security",
+      "triggers": [
+        "security static analysis",
+        "security",
+        "static",
+        "analysis"
+      ],
+      "cli": null,
+      "mcp": null,
+      "plugin": "security-static-analysis-plugin",
+      "source": "trailofbits"
+    },
+    {
+      "id": "security-testing-handbook",
+      "name": "Security Testing Handbook",
+      "category": "security",
+      "triggers": [
+        "security testing handbook",
+        "security",
+        "testing",
+        "handbook"
+      ],
+      "cli": null,
+      "mcp": null,
+      "plugin": "security-testing-handbook-plugin",
+      "source": "trailofbits"
+    },
+    {
+      "id": "security-timing-analysis",
+      "name": "Security Timing Analysis",
+      "category": "security",
+      "triggers": [
+        "security timing analysis",
+        "security",
+        "timing",
+        "analysis"
+      ],
+      "cli": null,
+      "mcp": null,
+      "plugin": "security-timing-analysis-plugin",
+      "source": "trailofbits"
+    },
+    {
+      "id": "security-variant-analysis",
+      "name": "Security Variant Analysis",
+      "category": "security",
+      "triggers": [
+        "security variant analysis",
+        "security",
+        "variant",
+        "analysis"
+      ],
+      "cli": null,
+      "mcp": null,
+      "plugin": "security-variant-analysis-plugin",
+      "source": "trailofbits"
+    },
+    {
+      "id": "semgrep-rule-creator",
+      "name": "Semgrep Rule Creator",
+      "category": "security",
+      "triggers": [
+        "semgrep rule creator",
+        "semgrep",
+        "rule",
+        "creator"
+      ],
+      "cli": null,
+      "mcp": null,
+      "plugin": "semgrep-rule-creator-plugin",
+      "source": "trailofbits"
+    },
+    {
+      "id": "semgrep-rule-variants",
+      "name": "Semgrep Rule Variants",
+      "category": "security",
+      "triggers": [
+        "semgrep rule variants",
+        "semgrep",
+        "rule",
+        "variants"
+      ],
+      "cli": null,
+      "mcp": null,
+      "plugin": "semgrep-rule-variants-plugin",
+      "source": "trailofbits"
+    },
+    {
+      "id": "shopify-expert",
+      "name": "Shopify Expert",
+      "category": "frontend",
+      "triggers": [
+        "shopify expert",
+        "shopify",
+        "expert"
+      ],
+      "cli": null,
+      "mcp": null,
+      "plugin": null,
+      "source": "jeffallan"
+    },
+    {
+      "id": "spark-engineer",
+      "name": "Spark Engineer",
+      "category": "frontend",
+      "triggers": [
+        "spark engineer",
+        "spark",
+        "engineer"
+      ],
+      "cli": null,
+      "mcp": null,
+      "plugin": null,
+      "source": "jeffallan"
+    },
+    {
+      "id": "spring-boot-engineer",
+      "name": "Spring Boot Engineer",
+      "category": "security",
+      "triggers": [
+        "spring boot engineer",
+        "spring",
+        "boot",
+        "engineer"
+      ],
+      "cli": null,
+      "mcp": null,
+      "plugin": null,
+      "source": "jeffallan"
+    },
+    {
+      "id": "sql-pro",
+      "name": "SQL Pro",
+      "category": "languages",
+      "triggers": [
+        "sql pro",
+        "sql",
+        "pro"
+      ],
+      "cli": null,
+      "mcp": "postgres",
+      "plugin": null,
+      "source": "jeffallan"
+    },
+    {
+      "id": "sre-engineer",
+      "name": "SRE Engineer",
+      "category": "devops",
+      "triggers": [
+        "sre engineer",
+        "sre",
+        "engineer"
+      ],
+      "cli": null,
+      "mcp": "sentry",
+      "plugin": null,
+      "source": "ahmedasmar"
+    },
+    {
+      "id": "svg-logo-designer",
+      "name": "SVG Logo Designer",
+      "category": "design",
+      "triggers": [
+        "svg logo designer",
+        "svg",
+        "logo",
+        "designer"
+      ],
+      "cli": null,
+      "mcp": null,
+      "plugin": null,
+      "source": "jeffallan"
+    },
+    {
+      "id": "swift-expert",
+      "name": "Swift Expert",
+      "category": "frontend",
+      "triggers": [
+        "swift expert",
+        "swift",
+        "expert"
+      ],
+      "cli": null,
+      "mcp": null,
+      "plugin": null,
+      "source": "jeffallan"
+    },
+    {
+      "id": "terraform-engineer",
+      "name": "Terraform Engineer",
+      "category": "devops",
+      "triggers": [
+        "terraform engineer",
+        "terraform",
+        "engineer"
+      ],
+      "cli": null,
+      "mcp": null,
+      "plugin": null,
+      "source": "jeffallan"
+    },
+    {
+      "id": "terraform-iac",
+      "name": "Terraform IaC",
+      "category": "devops",
+      "triggers": [
+        "terraform iac",
+        "terraform",
+        "iac"
+      ],
+      "cli": null,
+      "mcp": null,
+      "plugin": null,
+      "source": "antonbabenko"
+    },
+    {
+      "id": "test-master",
+      "name": "Test Master",
+      "category": "testing",
+      "triggers": [
+        "test master",
+        "test",
+        "master"
+      ],
+      "cli": null,
+      "mcp": null,
+      "plugin": null,
+      "source": "jeffallan"
+    },
+    {
+      "id": "typescript-pro",
+      "name": "TypeScript Pro",
+      "category": "frontend",
+      "triggers": [
+        "typescript pro",
+        "typescript",
+        "pro"
+      ],
+      "cli": null,
+      "mcp": null,
+      "plugin": null,
+      "source": "jeffallan"
+    },
+    {
+      "id": "uiux-design-review",
+      "name": "Uiux Design Review",
+      "category": "design",
+      "triggers": [
+        "uiux design review",
+        "uiux",
+        "design",
+        "review"
+      ],
+      "cli": null,
+      "mcp": null,
+      "plugin": null,
+      "source": "jeffallan"
+    },
+    {
+      "id": "vue-expert",
+      "name": "Vue Expert",
+      "category": "frontend",
+      "triggers": [
+        "vue expert",
+        "vue",
+        "expert"
+      ],
+      "cli": null,
+      "mcp": null,
+      "plugin": null,
+      "source": "jeffallan"
+    },
+    {
+      "id": "web-design-builder",
+      "name": "Web Design Builder",
+      "category": "design",
+      "triggers": [
+        "web design builder",
+        "web",
+        "design",
+        "builder"
+      ],
+      "cli": null,
+      "mcp": null,
+      "plugin": null,
+      "source": "jeffallan"
+    },
+    {
+      "id": "welcome",
+      "name": "Welcome",
+      "category": "utilities",
+      "triggers": [
+        "welcome"
+      ],
+      "cli": null,
+      "mcp": null,
+      "plugin": null,
+      "source": "jeffallan"
+    },
+    {
+      "id": "wordpress-pro",
+      "name": "WordPress Pro",
+      "category": "security",
+      "triggers": [
+        "wordpress pro",
+        "wordpress",
+        "pro"
+      ],
+      "cli": null,
+      "mcp": null,
+      "plugin": null,
+      "source": "jeffallan"
+    },
+    {
+      "id": "yara-rule-authoring",
+      "name": "YARA Rule Authoring",
+      "category": "security",
+      "triggers": [
+        "yara rule authoring",
+        "yara",
+        "rule",
+        "authoring"
+      ],
+      "cli": null,
+      "mcp": null,
+      "plugin": "yara-rule-authoring-plugin",
+      "source": "trailofbits"
+    },
+    {
+      "id": "security-chrome-troubleshooting",
+      "name": "Chrome MCP Troubleshooting",
+      "category": "utilities",
+      "triggers": [
+        "chrome troubleshooting",
+        "claude in chrome",
+        "mcp extension",
+        "browser extension not connected"
+      ],
+      "cli": null,
+      "mcp": null,
+      "plugin": "security-chrome-troubleshooting-plugin",
+      "source": "trailofbits"
     }
   ],
+  "companionPlugins": {
+    "source": "anthropic",
+    "repo": "anthropics/knowledge-work-plugins",
+    "license": "Apache-2.0",
+    "installCommand": "claude plugins add knowledge-work-plugins/{id}",
+    "description": "Enterprise knowledge-work plugins by Anthropic. Complement Rising Tides dev skills.",
+    "plugins": [
+      {
+        "id": "productivity",
+        "name": "Productivity",
+        "triggers": [
+          "tasks",
+          "calendar",
+          "daily planning",
+          "meeting notes",
+          "project management"
+        ]
+      },
+      {
+        "id": "sales",
+        "name": "Sales",
+        "triggers": [
+          "CRM",
+          "pipeline",
+          "deals",
+          "outreach",
+          "prospects",
+          "salesforce"
+        ]
+      },
+      {
+        "id": "customer-support",
+        "name": "Customer Support",
+        "triggers": [
+          "support tickets",
+          "helpdesk",
+          "customer issues",
+          "intercom"
+        ]
+      },
+      {
+        "id": "product-management",
+        "name": "Product Management",
+        "triggers": [
+          "PRD",
+          "product roadmap",
+          "user stories",
+          "backlog",
+          "feature specs"
+        ]
+      },
+      {
+        "id": "marketing",
+        "name": "Marketing (Enterprise)",
+        "triggers": [
+          "marketing campaign",
+          "brand strategy",
+          "content calendar",
+          "campaign plan"
+        ]
+      },
+      {
+        "id": "legal",
+        "name": "Legal",
+        "triggers": [
+          "contract review",
+          "NDA",
+          "compliance",
+          "legal analysis"
+        ]
+      },
+      {
+        "id": "finance",
+        "name": "Finance",
+        "triggers": [
+          "financial analysis",
+          "budget",
+          "forecast",
+          "journal entries",
+          "reconciliation"
+        ]
+      },
+      {
+        "id": "data",
+        "name": "Data",
+        "triggers": [
+          "SQL",
+          "data analysis",
+          "dashboard",
+          "metrics",
+          "reporting",
+          "data warehouse"
+        ]
+      },
+      {
+        "id": "enterprise-search",
+        "name": "Enterprise Search",
+        "triggers": [
+          "search documents",
+          "knowledge base",
+          "internal search"
+        ]
+      },
+      {
+        "id": "bio-research",
+        "name": "Bio Research",
+        "triggers": [
+          "genomics",
+          "lab protocols",
+          "research papers",
+          "biology"
+        ]
+      },
+      {
+        "id": "cowork-plugin-management",
+        "name": "Plugin Management",
+        "triggers": [
+          "manage plugins",
+          "configure cowork"
+        ]
+      }
+    ]
+  },
   "sources": {
     "anthropic": {
       "name": "Anthropic",
@@ -1041,13 +3641,63 @@
     },
     "nickmohler": {
       "name": "Nick Mohler",
-      "count": 12,
+      "count": 16,
       "description": "CLI integrations and orchestration"
     },
     "obra": {
       "name": "obra/superpowers",
       "count": 1,
       "description": "Debugging methodology"
+    },
+    "trailofbits": {
+      "name": "Trail of Bits",
+      "count": 18,
+      "description": "Security skills and analysis tools"
+    },
+    "harperaa": {
+      "name": "harperaa",
+      "count": 7,
+      "description": "Next.js security patterns"
+    },
+    "rknall": {
+      "name": "rknall",
+      "count": 6,
+      "description": "Docker validation and GitLab workflows"
+    },
+    "antonbabenko": {
+      "name": "Anton Babenko",
+      "count": 1,
+      "description": "Terraform IaC expertise"
+    },
+    "chriswiles": {
+      "name": "Chris Wiles",
+      "count": 5,
+      "description": "Claude Code showcase patterns"
+    },
+    "ahmedasmar": {
+      "name": "Ahmed Asmar",
+      "count": 6,
+      "description": "DevOps and SRE skills"
+    },
+    "jeffallan": {
+      "name": "Jeff Allan",
+      "count": 70,
+      "description": "Language and framework expertise"
+    },
+    "lackeyjb": {
+      "name": "lackeyjb",
+      "count": 1,
+      "description": "Playwright testing patterns"
+    },
+    "ckreiling": {
+      "name": "ckreiling",
+      "count": 0,
+      "description": "Docker MCP server"
+    },
+    "ko1ynnky": {
+      "name": "ko1ynnky",
+      "count": 0,
+      "description": "GitHub Actions MCP server"
     }
   }
 }

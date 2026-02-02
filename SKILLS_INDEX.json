@@ -3,8 +3,8 @@
     "name": "Rising Tides Skills Pack",
     "version": "1.0.0",
     "lastUpdated": "2026-02-01",
-    "totalSkills": 167,
-    "totalPlugins": 32,
+    "totalSkills": 173,
+    "totalPlugins": 37,
     "totalCLIs": 9,
     "totalMCPs": 17,
     "totalCompanionPlugins": 11
@@ -308,7 +308,14 @@
       "mcps": [
         "context7"
       ],
-      "purpose": "React development with live docs"
+      "purpose": "React development with live docs",
+      "companionSkills": [
+        "frontend-design",
+        "design-system-starter",
+        "typescript-pro",
+        "webapp-testing",
+        "git-workflow"
+      ]
     },
     {
       "id": "frontend-design-plugin",
@@ -316,7 +323,12 @@
       "mcps": [
         "context7"
       ],
-      "purpose": "Frontend architecture with live docs"
+      "purpose": "Frontend architecture with live docs",
+      "companionSkills": [
+        "react-dev",
+        "design-system-starter",
+        "theme-factory"
+      ]
     },
     {
       "id": "frontend-ui-plugin",
@@ -325,7 +337,12 @@
         "context7",
         "shadcn"
       ],
-      "purpose": "Full frontend with components"
+      "purpose": "Full frontend with components",
+      "companionSkills": [
+        "react-dev",
+        "frontend-design",
+        "design-system-starter"
+      ]
     },
     {
       "id": "mcp-builder-plugin",
@@ -333,7 +350,12 @@
       "mcps": [
         "context7"
       ],
-      "purpose": "MCP server development"
+      "purpose": "MCP server development",
+      "companionSkills": [
+        "plugin-forge",
+        "skill-creator",
+        "api-designer"
+      ]
     },
     {
       "id": "webapp-testing-plugin",
@@ -341,7 +363,13 @@
       "mcps": [
         "playwright"
       ],
-      "purpose": "E2E testing and browser automation"
+      "purpose": "E2E testing and browser automation",
+      "companionSkills": [
+        "react-dev",
+        "test-master",
+        "git-workflow",
+        "debugging"
+      ]
     },
     {
       "id": "browser-automation-plugin",
@@ -349,7 +377,11 @@
       "mcps": [
         "claude-in-chrome"
       ],
-      "purpose": "Full browser control"
+      "purpose": "Full browser control",
+      "companionSkills": [
+        "webapp-testing",
+        "chrome-extension-troubleshooting"
+      ]
     },
     {
       "id": "video-generator-plugin",
@@ -357,7 +389,11 @@
       "mcps": [
         "remotion"
       ],
-      "purpose": "Programmatic video creation"
+      "purpose": "Programmatic video creation",
+      "companionSkills": [
+        "react-dev",
+        "frontend-design"
+      ]
     },
     {
       "id": "git-workflow-plugin",
@@ -365,7 +401,13 @@
       "mcps": [
         "github"
       ],
-      "purpose": "Git commits and PR management"
+      "purpose": "Git commits and PR management",
+      "companionSkills": [
+        "code-reviewer",
+        "debugging",
+        "feature-forge",
+        "dependency-updater"
+      ]
     },
     {
       "id": "context7-plugin",
@@ -373,7 +415,14 @@
       "mcps": [
         "context7"
       ],
-      "purpose": "Direct docs access for any library"
+      "purpose": "Direct docs access for any library",
+      "companionSkills": [
+        "react-dev",
+        "frontend-design",
+        "mcp-builder",
+        "typescript-pro",
+        "modern-python"
+      ]
     },
     {
       "id": "playwright-plugin",
@@ -381,7 +430,12 @@
       "mcps": [
         "playwright"
       ],
-      "purpose": "Direct browser automation"
+      "purpose": "Direct browser automation",
+      "companionSkills": [
+        "webapp-testing",
+        "test-master",
+        "react-dev"
+      ]
     },
     {
       "id": "remotion-plugin",
@@ -389,7 +443,11 @@
       "mcps": [
         "remotion"
       ],
-      "purpose": "Direct video generation tools"
+      "purpose": "Direct video generation tools",
+      "companionSkills": [
+        "video-generator",
+        "react-dev"
+      ]
     },
     {
       "id": "memory-plugin",
@@ -405,7 +463,13 @@
       "mcps": [
         "docker"
       ],
-      "purpose": "Docker container management"
+      "purpose": "Docker container management",
+      "companionSkills": [
+        "kubernetes-specialist",
+        "devops-engineer",
+        "microservices-architect",
+        "terraform-pro"
+      ]
     },
     {
       "id": "github-actions-plugin",
@@ -413,115 +477,228 @@
       "mcps": [
         "github-actions"
       ],
-      "purpose": "GitHub Actions workflow management"
+      "purpose": "GitHub Actions workflow management",
+      "companionSkills": [
+        "git-workflow",
+        "devops-engineer",
+        "gitops-workflows"
+      ]
     },
     {
       "id": "security-burpsuite-parser-plugin",
       "skill": "security-burpsuite-parser",
       "mcps": [],
-      "purpose": "Burp Suite project file parsing"
+      "purpose": "Burp Suite project file parsing",
+      "companionSkills": [
+        "security-testing-handbook",
+        "security-code-review"
+      ]
     },
     {
       "id": "security-entry-points-plugin",
       "skill": "security-entry-points",
       "mcps": [],
-      "purpose": "Smart contract entry point analysis"
+      "purpose": "Smart contract entry point analysis",
+      "companionSkills": [
+        "security-code-review",
+        "security-static-analysis"
+      ]
     },
     {
       "id": "security-firebase-apk-plugin",
       "skill": "security-firebase-apk",
       "mcps": [],
-      "purpose": "Firebase APK security scanning"
+      "purpose": "Firebase APK security scanning",
+      "companionSkills": [
+        "firebase-guide"
+      ]
     },
     {
       "id": "security-fix-review-plugin",
       "skill": "security-fix-review",
       "mcps": [],
-      "purpose": "Security fix verification"
+      "purpose": "Security fix verification",
+      "companionSkills": [
+        "security-code-review",
+        "git-workflow"
+      ]
     },
     {
       "id": "semgrep-rule-variants-plugin",
       "skill": "semgrep-rule-variants",
       "mcps": [],
-      "purpose": "Semgrep rule language variants"
+      "purpose": "Semgrep rule language variants",
+      "companionSkills": [
+        "semgrep-rule-creator",
+        "security-static-analysis"
+      ]
     },
     {
       "id": "security-sharp-edges-plugin",
       "skill": "security-sharp-edges",
       "mcps": [],
-      "purpose": "Error-prone API identification"
+      "purpose": "Error-prone API identification",
+      "companionSkills": [
+        "security-code-review"
+      ]
     },
     {
       "id": "security-spec-compliance-plugin",
       "skill": "security-spec-compliance",
       "mcps": [],
-      "purpose": "Spec-to-code compliance checking"
+      "purpose": "Spec-to-code compliance checking",
+      "companionSkills": [
+        "security-code-review"
+      ]
     },
     {
       "id": "security-static-analysis-plugin",
       "skill": "security-static-analysis",
       "mcps": [],
-      "purpose": "Static analysis with CodeQL and Semgrep"
+      "purpose": "Static analysis with CodeQL and Semgrep",
+      "companionSkills": [
+        "security-code-review",
+        "semgrep-rule-creator"
+      ]
     },
     {
       "id": "security-testing-handbook-plugin",
       "skill": "security-testing-handbook",
       "mcps": [],
-      "purpose": "Application security testing handbook"
+      "purpose": "Application security testing handbook",
+      "companionSkills": [
+        "security-code-review",
+        "webapp-testing"
+      ]
     },
     {
       "id": "security-variant-analysis-plugin",
       "skill": "security-variant-analysis",
       "mcps": [],
-      "purpose": "Vulnerability variant analysis"
+      "purpose": "Vulnerability variant analysis",
+      "companionSkills": [
+        "security-static-analysis",
+        "security-code-review"
+      ]
     },
     {
       "id": "yara-rule-authoring-plugin",
       "skill": "yara-rule-authoring",
       "mcps": [],
-      "purpose": "YARA detection rule authoring"
+      "purpose": "YARA detection rule authoring",
+      "companionSkills": [
+        "security-static-analysis"
+      ]
     },
     {
       "id": "security-smart-contracts-plugin",
       "skill": "security-smart-contracts",
       "mcps": [],
-      "purpose": "Secure smart contract development"
+      "purpose": "Secure smart contract development",
+      "companionSkills": [
+        "security-code-review"
+      ]
     },
     {
       "id": "security-insecure-defaults-plugin",
       "skill": "security-insecure-defaults",
       "mcps": [],
-      "purpose": "Insecure default detection"
+      "purpose": "Insecure default detection",
+      "companionSkills": [
+        "security-code-review"
+      ]
     },
     {
       "id": "modern-python-plugin",
       "skill": "modern-python",
       "mcps": [],
-      "purpose": "Modern Python best practices"
+      "purpose": "Modern Python best practices",
+      "companionSkills": [
+        "python-pro",
+        "fastapi-expert",
+        "django-expert"
+      ]
     },
     {
       "id": "property-based-testing-plugin",
       "skill": "property-based-testing",
       "mcps": [],
-      "purpose": "Property-based testing guidance"
+      "purpose": "Property-based testing guidance",
+      "companionSkills": [
+        "python-pro",
+        "test-master",
+        "modern-python"
+      ]
     },
     {
       "id": "semgrep-rule-creator-plugin",
       "skill": "semgrep-rule-creator",
       "mcps": [],
-      "purpose": "Custom Semgrep rule creation"
+      "purpose": "Custom Semgrep rule creation",
+      "companionSkills": [
+        "security-static-analysis",
+        "semgrep-rule-variants"
+      ]
     },
     {
       "id": "security-timing-analysis-plugin",
       "skill": "security-timing-analysis",
       "mcps": [],
-      "purpose": "Timing side-channel detection"
+      "purpose": "Timing side-channel detection",
+      "companionSkills": [
+        "security-code-review"
+      ]
     },
     {
       "id": "security-chrome-troubleshooting-plugin",
       "skill": "security-chrome-troubleshooting",
       "mcps": [],
-      "purpose": "Claude in Chrome MCP troubleshooting"
+      "purpose": "Claude in Chrome MCP troubleshooting",
+      "companionSkills": [
+        "chrome-extension-troubleshooting",
+        "browser-automation"
+      ]
+    },
+    {
+      "id": "ask-questions-first-plugin",
+      "skill": "ask-questions-first",
+      "mcps": [],
+      "purpose": "Requirement clarification before implementation",
+      "companionSkills": [
+        "requirements-clarity",
+        "feature-forge"
+      ]
+    },
+    {
+      "id": "culture-index-plugin",
+      "skill": "culture-index",
+      "mcps": [],
+      "purpose": "Culture Index survey interpretation"
+    },
+    {
+      "id": "dwarf-expert-plugin",
+      "skill": "dwarf-expert",
+      "mcps": [],
+      "purpose": "DWARF debug format analysis"
+    },
+    {
+      "id": "security-audit-context-plugin",
+      "skill": "security-audit-context",
+      "mcps": [],
+      "purpose": "Deep architectural context for security audits",
+      "companionSkills": [
+        "security-code-review"
+      ]
+    },
+    {
+      "id": "security-differential-review-plugin",
+      "skill": "security-differential-review",
+      "mcps": [],
+      "purpose": "Security-focused differential code review",
+      "companionSkills": [
+        "security-code-review",
+        "git-workflow"
+      ]
     }
   ],
   "categories": {
@@ -726,7 +903,10 @@
       "cli": null,
       "mcp": "linear",
       "plugin": null,
-      "source": "softaworks"
+      "source": "softaworks",
+      "toolImportance": {
+        "linear": "optional"
+      }
     },
     {
       "id": "datadog-cli",
@@ -743,7 +923,10 @@
       "cli": "datadog",
       "mcp": null,
       "plugin": null,
-      "source": "nickmohler"
+      "source": "nickmohler",
+      "toolImportance": {
+        "datadog": "essential"
+      }
     },
     {
       "id": "dependency-updater",
@@ -773,7 +956,14 @@
       "cli": null,
       "mcp": null,
       "plugin": null,
-      "source": "softaworks"
+      "source": "softaworks",
+      "toolImportance": {
+        "context7": "recommended"
+      },
+      "relatedPlugins": [
+        "frontend-ui-plugin",
+        "react-dev-plugin"
+      ]
     },
     {
       "id": "difficult-workplace-conversations",
@@ -819,7 +1009,10 @@
       "cli": null,
       "mcp": null,
       "plugin": null,
-      "source": "softaworks"
+      "source": "softaworks",
+      "toolImportance": {
+        "postgres": "recommended"
+      }
     },
     {
       "id": "email-sequence",
@@ -881,7 +1074,10 @@
       "cli": "firebase",
       "mcp": null,
       "plugin": null,
-      "source": "nickmohler"
+      "source": "nickmohler",
+      "toolImportance": {
+        "firebase": "essential"
+      }
     },
     {
       "id": "form-cro",
@@ -925,7 +1121,14 @@
       "cli": null,
       "mcp": "context7",
       "plugin": "frontend-design-plugin",
-      "source": "softaworks"
+      "source": "softaworks",
+      "toolImportance": {
+        "context7": "recommended"
+      },
+      "relatedPlugins": [
+        "react-dev-plugin",
+        "frontend-ui-plugin"
+      ]
     },
     {
       "id": "frontend-to-backend-requirements",
@@ -956,7 +1159,10 @@
       "cli": "gcloud",
       "mcp": null,
       "plugin": null,
-      "source": "nickmohler"
+      "source": "nickmohler",
+      "toolImportance": {
+        "gcloud": "essential"
+      }
     },
     {
       "id": "humanizer",
@@ -987,7 +1193,11 @@
       "cli": "jira",
       "mcp": "atlassian",
       "plugin": null,
-      "source": "nickmohler"
+      "source": "nickmohler",
+      "toolImportance": {
+        "jira": "essential",
+        "atlassian": "essential"
+      }
     },
     {
       "id": "launch-strategy",
@@ -1048,7 +1258,10 @@
       "cli": null,
       "mcp": "context7",
       "plugin": "mcp-builder-plugin",
-      "source": "softaworks"
+      "source": "softaworks",
+      "toolImportance": {
+        "context7": "recommended"
+      }
     },
     {
       "id": "mermaid-diagrams",
@@ -1079,7 +1292,10 @@
       "cli": "netlify",
       "mcp": null,
       "plugin": null,
-      "source": "nickmohler"
+      "source": "nickmohler",
+      "toolImportance": {
+        "netlify": "essential"
+      }
     },
     {
       "id": "oauth-setup",
@@ -1126,7 +1342,10 @@
       "cli": null,
       "mcp": null,
       "plugin": null,
-      "source": "softaworks"
+      "source": "softaworks",
+      "toolImportance": {
+        "context7": "recommended"
+      }
     },
     {
       "id": "page-cro",
@@ -1205,7 +1424,10 @@
       "cli": null,
       "mcp": "perplexity",
       "plugin": null,
-      "source": "nickmohler"
+      "source": "nickmohler",
+      "toolImportance": {
+        "perplexity": "essential"
+      }
     },
     {
       "id": "plugin-forge",
@@ -1220,7 +1442,10 @@
       "cli": null,
       "mcp": null,
       "plugin": null,
-      "source": "softaworks"
+      "source": "softaworks",
+      "relatedPlugins": [
+        "mcp-builder-plugin"
+      ]
     },
     {
       "id": "popup-cro",
@@ -1282,7 +1507,10 @@
       "cli": null,
       "mcp": "slack",
       "plugin": null,
-      "source": "softaworks"
+      "source": "softaworks",
+      "toolImportance": {
+        "slack": "optional"
+      }
     },
     {
       "id": "programmatic-seo",
@@ -1328,7 +1556,15 @@
       "cli": null,
       "mcp": "context7",
       "plugin": "react-dev-plugin",
-      "source": "softaworks"
+      "source": "softaworks",
+      "toolImportance": {
+        "context7": "recommended"
+      },
+      "relatedPlugins": [
+        "frontend-design-plugin",
+        "frontend-ui-plugin",
+        "webapp-testing-plugin"
+      ]
     },
     {
       "id": "recommend-skills",
@@ -1357,7 +1593,10 @@
       "cli": null,
       "mcp": "linear",
       "plugin": null,
-      "source": "softaworks"
+      "source": "softaworks",
+      "toolImportance": {
+        "linear": "optional"
+      }
     },
     {
       "id": "saas-starter-setup",
@@ -1372,7 +1611,11 @@
       "cli": null,
       "mcp": null,
       "plugin": null,
-      "source": "softaworks"
+      "source": "softaworks",
+      "toolImportance": {
+        "postgres": "recommended",
+        "supabase": "optional"
+      }
     },
     {
       "id": "saas-from-scratch",
@@ -1388,7 +1631,11 @@
       "cli": null,
       "mcp": null,
       "plugin": null,
-      "source": "nickmohler"
+      "source": "nickmohler",
+      "toolImportance": {
+        "postgres": "recommended",
+        "stripe": "optional"
+      }
     },
     {
       "id": "schema-markup",
@@ -1433,7 +1680,10 @@
       "cli": null,
       "mcp": "notion",
       "plugin": null,
-      "source": "softaworks"
+      "source": "softaworks",
+      "toolImportance": {
+        "notion": "optional"
+      }
     },
     {
       "id": "signup-flow-cro",
@@ -1506,7 +1756,10 @@
       "cli": "stripe",
       "mcp": null,
       "plugin": null,
-      "source": "nickmohler"
+      "source": "nickmohler",
+      "toolImportance": {
+        "stripe": "essential"
+      }
     },
     {
       "id": "supabase-guide",
@@ -1522,7 +1775,11 @@
       "cli": "supabase",
       "mcp": null,
       "plugin": null,
-      "source": "nickmohler"
+      "source": "nickmohler",
+      "toolImportance": {
+        "supabase": "essential",
+        "postgres": "recommended"
+      }
     },
     {
       "id": "theme-factory",
@@ -1567,7 +1824,10 @@
       "cli": "vercel",
       "mcp": null,
       "plugin": null,
-      "source": "nickmohler"
+      "source": "nickmohler",
+      "toolImportance": {
+        "vercel": "essential"
+      }
     },
     {
       "id": "video-generator",
@@ -1582,7 +1842,10 @@
       "cli": null,
       "mcp": "remotion",
       "plugin": "video-generator-plugin",
-      "source": "anthropic"
+      "source": "anthropic",
+      "toolImportance": {
+        "remotion": "essential"
+      }
     },
     {
       "id": "webapp-testing",
@@ -1597,7 +1860,13 @@
       "cli": null,
       "mcp": "playwright",
       "plugin": "webapp-testing-plugin",
-      "source": "softaworks"
+      "source": "softaworks",
+      "toolImportance": {
+        "playwright": "essential"
+      },
+      "relatedPlugins": [
+        "react-dev-plugin"
+      ]
     },
     {
       "id": "writing-clearly-and-concisely",
@@ -1672,7 +1941,13 @@
       "cli": null,
       "mcp": null,
       "plugin": null,
-      "source": "jeffallan"
+      "source": "jeffallan",
+      "toolImportance": {
+        "context7": "recommended"
+      },
+      "relatedPlugins": [
+        "webapp-testing-plugin"
+      ]
     },
     {
       "id": "api-designer",
@@ -1686,7 +1961,10 @@
       "cli": null,
       "mcp": null,
       "plugin": null,
-      "source": "jeffallan"
+      "source": "jeffallan",
+      "toolImportance": {
+        "context7": "recommended"
+      }
     },
     {
       "id": "architecture-designer",
@@ -1744,7 +2022,13 @@
       "cli": null,
       "mcp": null,
       "plugin": null,
-      "source": "chriswiles"
+      "source": "chriswiles",
+      "toolImportance": {
+        "claude-in-chrome": "recommended"
+      },
+      "relatedPlugins": [
+        "browser-automation-plugin"
+      ]
     },
     {
       "id": "cli-developer",
@@ -1758,7 +2042,10 @@
       "cli": null,
       "mcp": null,
       "plugin": null,
-      "source": "jeffallan"
+      "source": "jeffallan",
+      "toolImportance": {
+        "context7": "recommended"
+      }
     },
     {
       "id": "cloud-architect",
@@ -1800,7 +2087,14 @@
       "cli": null,
       "mcp": null,
       "plugin": null,
-      "source": "jeffallan"
+      "source": "jeffallan",
+      "toolImportance": {
+        "gh": "recommended",
+        "github": "recommended"
+      },
+      "relatedPlugins": [
+        "git-workflow-plugin"
+      ]
     },
     {
       "id": "cpp-pro",
@@ -1814,7 +2108,10 @@
       "cli": null,
       "mcp": null,
       "plugin": null,
-      "source": "jeffallan"
+      "source": "jeffallan",
+      "toolImportance": {
+        "context7": "recommended"
+      }
     },
     {
       "id": "csharp-developer",
@@ -1828,7 +2125,10 @@
       "cli": null,
       "mcp": null,
       "plugin": null,
-      "source": "jeffallan"
+      "source": "jeffallan",
+      "toolImportance": {
+        "context7": "recommended"
+      }
     },
     {
       "id": "devops-engineer",
@@ -1842,7 +2142,15 @@
       "cli": null,
       "mcp": null,
       "plugin": null,
-      "source": "jeffallan"
+      "source": "jeffallan",
+      "toolImportance": {
+        "docker": "recommended",
+        "github": "optional"
+      },
+      "relatedPlugins": [
+        "docker-plugin",
+        "github-actions-plugin"
+      ]
     },
     {
       "id": "django-expert",
@@ -1856,7 +2164,11 @@
       "cli": null,
       "mcp": null,
       "plugin": null,
-      "source": "jeffallan"
+      "source": "jeffallan",
+      "toolImportance": {
+        "context7": "recommended",
+        "postgres": "recommended"
+      }
     },
     {
       "id": "docker-management",
@@ -1870,7 +2182,10 @@
       "cli": null,
       "mcp": "docker",
       "plugin": "docker-plugin",
-      "source": "nickmohler"
+      "source": "nickmohler",
+      "toolImportance": {
+        "docker": "essential"
+      }
     },
     {
       "id": "dotnet-core-expert",
@@ -1885,7 +2200,10 @@
       "cli": null,
       "mcp": null,
       "plugin": null,
-      "source": "jeffallan"
+      "source": "jeffallan",
+      "toolImportance": {
+        "context7": "recommended"
+      }
     },
     {
       "id": "fastapi-expert",
@@ -1899,7 +2217,11 @@
       "cli": null,
       "mcp": null,
       "plugin": null,
-      "source": "jeffallan"
+      "source": "jeffallan",
+      "toolImportance": {
+        "context7": "recommended",
+        "postgres": "recommended"
+      }
     },
     {
       "id": "feature-forge",
@@ -1928,7 +2250,10 @@
       "cli": null,
       "mcp": null,
       "plugin": null,
-      "source": "jeffallan"
+      "source": "jeffallan",
+      "toolImportance": {
+        "context7": "recommended"
+      }
     },
     {
       "id": "flutter-expert",
@@ -1942,7 +2267,10 @@
       "cli": null,
       "mcp": null,
       "plugin": null,
-      "source": "jeffallan"
+      "source": "jeffallan",
+      "toolImportance": {
+        "context7": "recommended"
+      }
     },
     {
       "id": "fullstack-guardian",
@@ -1971,7 +2299,15 @@
       "cli": null,
       "mcp": "github-actions",
       "plugin": "github-actions-plugin",
-      "source": "nickmohler"
+      "source": "nickmohler",
+      "toolImportance": {
+        "github-actions": "essential",
+        "gh": "recommended"
+      },
+      "relatedPlugins": [
+        "git-workflow-plugin",
+        "docker-plugin"
+      ]
     },
     {
       "id": "gitops-workflows",
@@ -1985,7 +2321,15 @@
       "cli": null,
       "mcp": null,
       "plugin": null,
-      "source": "ahmedasmar"
+      "source": "ahmedasmar",
+      "toolImportance": {
+        "gh": "recommended",
+        "github": "recommended"
+      },
+      "relatedPlugins": [
+        "git-workflow-plugin",
+        "docker-plugin"
+      ]
     },
     {
       "id": "golang-pro",
@@ -1999,7 +2343,10 @@
       "cli": null,
       "mcp": null,
       "plugin": null,
-      "source": "jeffallan"
+      "source": "jeffallan",
+      "toolImportance": {
+        "context7": "recommended"
+      }
     },
     {
       "id": "java-architect",
@@ -2013,7 +2360,10 @@
       "cli": null,
       "mcp": null,
       "plugin": null,
-      "source": "jeffallan"
+      "source": "jeffallan",
+      "toolImportance": {
+        "context7": "recommended"
+      }
     },
     {
       "id": "javascript-pro",
@@ -2027,7 +2377,13 @@
       "cli": null,
       "mcp": null,
       "plugin": null,
-      "source": "jeffallan"
+      "source": "jeffallan",
+      "toolImportance": {
+        "context7": "recommended"
+      },
+      "relatedPlugins": [
+        "react-dev-plugin"
+      ]
     },
     {
       "id": "jest-testing-patterns",
@@ -2042,7 +2398,13 @@
       "cli": null,
       "mcp": null,
       "plugin": null,
-      "source": "jeffallan"
+      "source": "jeffallan",
+      "toolImportance": {
+        "context7": "recommended"
+      },
+      "relatedPlugins": [
+        "react-dev-plugin"
+      ]
     },
     {
       "id": "k8s-troubleshooter",
@@ -2056,7 +2418,10 @@
       "cli": null,
       "mcp": null,
       "plugin": null,
-      "source": "ahmedasmar"
+      "source": "ahmedasmar",
+      "toolImportance": {
+        "docker": "recommended"
+      }
     },
     {
       "id": "kotlin-specialist",
@@ -2070,7 +2435,10 @@
       "cli": null,
       "mcp": null,
       "plugin": null,
-      "source": "jeffallan"
+      "source": "jeffallan",
+      "toolImportance": {
+        "context7": "recommended"
+      }
     },
     {
       "id": "kubernetes-specialist",
@@ -2084,7 +2452,13 @@
       "cli": null,
       "mcp": null,
       "plugin": null,
-      "source": "jeffallan"
+      "source": "jeffallan",
+      "toolImportance": {
+        "docker": "recommended"
+      },
+      "relatedPlugins": [
+        "docker-plugin"
+      ]
     },
     {
       "id": "laravel-specialist",
@@ -2098,7 +2472,11 @@
       "cli": null,
       "mcp": null,
       "plugin": null,
-      "source": "jeffallan"
+      "source": "jeffallan",
+      "toolImportance": {
+        "context7": "recommended",
+        "postgres": "recommended"
+      }
     },
     {
       "id": "legacy-modernizer",
@@ -2126,7 +2504,13 @@
       "cli": null,
       "mcp": null,
       "plugin": null,
-      "source": "jeffallan"
+      "source": "jeffallan",
+      "toolImportance": {
+        "context7": "recommended"
+      },
+      "relatedPlugins": [
+        "mcp-builder-plugin"
+      ]
     },
     {
       "id": "microservices-architect",
@@ -2140,7 +2524,14 @@
       "cli": null,
       "mcp": null,
       "plugin": null,
-      "source": "jeffallan"
+      "source": "jeffallan",
+      "toolImportance": {
+        "docker": "recommended",
+        "context7": "optional"
+      },
+      "relatedPlugins": [
+        "docker-plugin"
+      ]
     },
     {
       "id": "ml-pipeline",
@@ -2153,7 +2544,10 @@
       "cli": null,
       "mcp": null,
       "plugin": null,
-      "source": "jeffallan"
+      "source": "jeffallan",
+      "toolImportance": {
+        "context7": "recommended"
+      }
     },
     {
       "id": "modern-python",
@@ -2167,7 +2561,13 @@
       "cli": null,
       "mcp": null,
       "plugin": "modern-python-plugin",
-      "source": "jeffallan"
+      "source": "jeffallan",
+      "toolImportance": {
+        "context7": "recommended"
+      },
+      "relatedPlugins": [
+        "property-based-testing-plugin"
+      ]
     },
     {
       "id": "nestjs-expert",
@@ -2181,7 +2581,11 @@
       "cli": null,
       "mcp": null,
       "plugin": null,
-      "source": "jeffallan"
+      "source": "jeffallan",
+      "toolImportance": {
+        "context7": "recommended",
+        "postgres": "recommended"
+      }
     },
     {
       "id": "nextjs-auth-security",
@@ -2197,7 +2601,10 @@
       "cli": null,
       "mcp": null,
       "plugin": null,
-      "source": "harperaa"
+      "source": "harperaa",
+      "toolImportance": {
+        "context7": "recommended"
+      }
     },
     {
       "id": "nextjs-csrf-protection",
@@ -2213,7 +2620,10 @@
       "cli": null,
       "mcp": null,
       "plugin": null,
-      "source": "jeffallan"
+      "source": "jeffallan",
+      "toolImportance": {
+        "context7": "recommended"
+      }
     },
     {
       "id": "nextjs-dependency-security",
@@ -2229,7 +2639,10 @@
       "cli": null,
       "mcp": null,
       "plugin": null,
-      "source": "harperaa"
+      "source": "harperaa",
+      "toolImportance": {
+        "context7": "recommended"
+      }
     },
     {
       "id": "nextjs-error-handling",
@@ -2245,7 +2658,10 @@
       "cli": null,
       "mcp": null,
       "plugin": null,
-      "source": "jeffallan"
+      "source": "jeffallan",
+      "toolImportance": {
+        "context7": "recommended"
+      }
     },
     {
       "id": "nextjs-input-validation",
@@ -2261,7 +2677,10 @@
       "cli": null,
       "mcp": null,
       "plugin": null,
-      "source": "jeffallan"
+      "source": "jeffallan",
+      "toolImportance": {
+        "context7": "recommended"
+      }
     },
     {
       "id": "nextjs-payment-security",
@@ -2277,7 +2696,11 @@
       "cli": null,
       "mcp": null,
       "plugin": null,
-      "source": "harperaa"
+      "source": "harperaa",
+      "toolImportance": {
+        "context7": "recommended",
+        "stripe": "optional"
+      }
     },
     {
       "id": "nextjs-rate-limiting",
@@ -2293,7 +2716,10 @@
       "cli": null,
       "mcp": null,
       "plugin": null,
-      "source": "jeffallan"
+      "source": "jeffallan",
+      "toolImportance": {
+        "context7": "recommended"
+      }
     },
     {
       "id": "nextjs-security-headers",
@@ -2309,7 +2735,10 @@
       "cli": null,
       "mcp": null,
       "plugin": null,
-      "source": "harperaa"
+      "source": "harperaa",
+      "toolImportance": {
+        "context7": "recommended"
+      }
     },
     {
       "id": "nextjs-security-operations",
@@ -2325,7 +2754,10 @@
       "cli": null,
       "mcp": null,
       "plugin": null,
-      "source": "harperaa"
+      "source": "harperaa",
+      "toolImportance": {
+        "context7": "recommended"
+      }
     },
     {
       "id": "nextjs-security-overview",
@@ -2341,7 +2773,10 @@
       "cli": null,
       "mcp": null,
       "plugin": null,
-      "source": "harperaa"
+      "source": "harperaa",
+      "toolImportance": {
+        "context7": "recommended"
+      }
     },
     {
       "id": "nextjs-security-testing",
@@ -2357,7 +2792,15 @@
       "cli": null,
       "mcp": null,
       "plugin": null,
-      "source": "harperaa"
+      "source": "harperaa",
+      "toolImportance": {
+        "context7": "recommended",
+        "playwright": "optional"
+      },
+      "relatedPlugins": [
+        "react-dev-plugin",
+        "webapp-testing-plugin"
+      ]
     },
     {
       "id": "pandas-pro",
@@ -2371,7 +2814,10 @@
       "cli": null,
       "mcp": null,
       "plugin": null,
-      "source": "jeffallan"
+      "source": "jeffallan",
+      "toolImportance": {
+        "context7": "recommended"
+      }
     },
     {
       "id": "php-pro",
@@ -2385,7 +2831,10 @@
       "cli": null,
       "mcp": null,
       "plugin": null,
-      "source": "jeffallan"
+      "source": "jeffallan",
+      "toolImportance": {
+        "context7": "recommended"
+      }
     },
     {
       "id": "prompt-engineer",
@@ -2414,7 +2863,10 @@
       "cli": null,
       "mcp": null,
       "plugin": "property-based-testing-plugin",
-      "source": "jeffallan"
+      "source": "jeffallan",
+      "toolImportance": {
+        "context7": "recommended"
+      }
     },
     {
       "id": "python-backend-review",
@@ -2443,7 +2895,14 @@
       "cli": null,
       "mcp": null,
       "plugin": null,
-      "source": "jeffallan"
+      "source": "jeffallan",
+      "toolImportance": {
+        "context7": "recommended"
+      },
+      "relatedPlugins": [
+        "modern-python-plugin",
+        "property-based-testing-plugin"
+      ]
     },
     {
       "id": "rag-architect",
@@ -2457,7 +2916,11 @@
       "cli": null,
       "mcp": null,
       "plugin": null,
-      "source": "jeffallan"
+      "source": "jeffallan",
+      "toolImportance": {
+        "context7": "recommended",
+        "postgres": "optional"
+      }
     },
     {
       "id": "rails-expert",
@@ -2471,7 +2934,11 @@
       "cli": null,
       "mcp": null,
       "plugin": null,
-      "source": "jeffallan"
+      "source": "jeffallan",
+      "toolImportance": {
+        "context7": "recommended",
+        "postgres": "recommended"
+      }
     },
     {
       "id": "react-native-expert",
@@ -2486,7 +2953,10 @@
       "cli": null,
       "mcp": null,
       "plugin": null,
-      "source": "jeffallan"
+      "source": "jeffallan",
+      "toolImportance": {
+        "context7": "recommended"
+      }
     },
     {
       "id": "rust-engineer",
@@ -2500,7 +2970,10 @@
       "cli": null,
       "mcp": null,
       "plugin": null,
-      "source": "jeffallan"
+      "source": "jeffallan",
+      "toolImportance": {
+        "context7": "recommended"
+      }
     },
     {
       "id": "salesforce-developer",
@@ -2514,7 +2987,10 @@
       "cli": null,
       "mcp": null,
       "plugin": null,
-      "source": "jeffallan"
+      "source": "jeffallan",
+      "toolImportance": {
+        "context7": "recommended"
+      }
     },
     {
       "id": "security-burpsuite-parser",
@@ -2559,7 +3035,10 @@
       "cli": null,
       "mcp": null,
       "plugin": "security-firebase-apk-plugin",
-      "source": "trailofbits"
+      "source": "trailofbits",
+      "toolImportance": {
+        "firebase": "recommended"
+      }
     },
     {
       "id": "security-fix-review",
@@ -2574,7 +3053,13 @@
       "cli": null,
       "mcp": null,
       "plugin": "security-fix-review-plugin",
-      "source": "trailofbits"
+      "source": "trailofbits",
+      "toolImportance": {
+        "github": "optional"
+      },
+      "relatedPlugins": [
+        "git-workflow-plugin"
+      ]
     },
     {
       "id": "security-insecure-defaults",
@@ -2738,7 +3223,10 @@
       "cli": null,
       "mcp": null,
       "plugin": null,
-      "source": "jeffallan"
+      "source": "jeffallan",
+      "toolImportance": {
+        "context7": "recommended"
+      }
     },
     {
       "id": "spring-boot-engineer",
@@ -2753,7 +3241,10 @@
       "cli": null,
       "mcp": null,
       "plugin": null,
-      "source": "jeffallan"
+      "source": "jeffallan",
+      "toolImportance": {
+        "context7": "recommended"
+      }
     },
     {
       "id": "sql-pro",
@@ -2767,7 +3258,10 @@
       "cli": null,
       "mcp": "postgres",
       "plugin": null,
-      "source": "jeffallan"
+      "source": "jeffallan",
+      "toolImportance": {
+        "postgres": "essential"
+      }
     },
     {
       "id": "svg-logo-designer",
@@ -2796,7 +3290,10 @@
       "cli": null,
       "mcp": null,
       "plugin": null,
-      "source": "jeffallan"
+      "source": "jeffallan",
+      "toolImportance": {
+        "context7": "recommended"
+      }
     },
     {
       "id": "test-master",
@@ -2810,7 +3307,15 @@
       "cli": null,
       "mcp": null,
       "plugin": null,
-      "source": "jeffallan"
+      "source": "jeffallan",
+      "toolImportance": {
+        "playwright": "recommended",
+        "context7": "optional"
+      },
+      "relatedPlugins": [
+        "webapp-testing-plugin",
+        "playwright-plugin"
+      ]
     },
     {
       "id": "typescript-pro",
@@ -2824,7 +3329,13 @@
       "cli": null,
       "mcp": null,
       "plugin": null,
-      "source": "jeffallan"
+      "source": "jeffallan",
+      "toolImportance": {
+        "context7": "recommended"
+      },
+      "relatedPlugins": [
+        "react-dev-plugin"
+      ]
     },
     {
       "id": "vue-expert",
@@ -2838,7 +3349,13 @@
       "cli": null,
       "mcp": null,
       "plugin": null,
-      "source": "jeffallan"
+      "source": "jeffallan",
+      "toolImportance": {
+        "context7": "recommended"
+      },
+      "relatedPlugins": [
+        "webapp-testing-plugin"
+      ]
     },
     {
       "id": "wordpress-pro",
@@ -2882,7 +3399,10 @@
       "cli": null,
       "mcp": null,
       "plugin": "security-chrome-troubleshooting-plugin",
-      "source": "trailofbits"
+      "source": "trailofbits",
+      "toolImportance": {
+        "claude-in-chrome": "recommended"
+      }
     },
     {
       "id": "nextjs-security",
@@ -2899,7 +3419,10 @@
       "cli": null,
       "mcp": null,
       "plugin": null,
-      "source": "nickmohler"
+      "source": "nickmohler",
+      "toolImportance": {
+        "context7": "recommended"
+      }
     },
     {
       "id": "terraform-pro",
@@ -2915,7 +3438,13 @@
       "cli": null,
       "mcp": null,
       "plugin": null,
-      "source": "community"
+      "source": "community",
+      "toolImportance": {
+        "context7": "recommended"
+      },
+      "relatedPlugins": [
+        "docker-plugin"
+      ]
     },
     {
       "id": "gitlab-stack",
@@ -2950,7 +3479,10 @@
       "cli": null,
       "mcp": null,
       "plugin": null,
-      "source": "community"
+      "source": "community",
+      "toolImportance": {
+        "datadog": "optional"
+      }
     },
     {
       "id": "playwright-testing",
@@ -2965,7 +3497,13 @@
       "cli": null,
       "mcp": "playwright",
       "plugin": "playwright-plugin",
-      "source": "community"
+      "source": "community",
+      "toolImportance": {
+        "playwright": "essential"
+      },
+      "relatedPlugins": [
+        "webapp-testing-plugin"
+      ]
     },
     {
       "id": "design-review",
@@ -2999,7 +3537,14 @@
       "cli": "gh",
       "mcp": "github",
       "plugin": "git-workflow-plugin",
-      "source": "softaworks"
+      "source": "softaworks",
+      "toolImportance": {
+        "gh": "essential",
+        "github": "recommended"
+      },
+      "relatedPlugins": [
+        "webapp-testing-plugin"
+      ]
     },
     {
       "id": "debugging",
@@ -3016,7 +3561,13 @@
       "cli": null,
       "mcp": null,
       "plugin": null,
-      "source": "community"
+      "source": "community",
+      "toolImportance": {
+        "github": "optional"
+      },
+      "relatedPlugins": [
+        "git-workflow-plugin"
+      ]
     },
     {
       "id": "security-code-review",
@@ -3032,7 +3583,13 @@
       "cli": null,
       "mcp": null,
       "plugin": null,
-      "source": "community"
+      "source": "community",
+      "toolImportance": {
+        "github": "optional"
+      },
+      "relatedPlugins": [
+        "git-workflow-plugin"
+      ]
     },
     {
       "id": "graphql-pro",
@@ -3048,7 +3605,11 @@
       "cli": null,
       "mcp": null,
       "plugin": null,
-      "source": "community"
+      "source": "community",
+      "toolImportance": {
+        "postgres": "recommended",
+        "context7": "recommended"
+      }
     },
     {
       "id": "database-pro",
@@ -3066,7 +3627,114 @@
       "cli": null,
       "mcp": "postgres",
       "plugin": null,
-      "source": "softaworks"
+      "source": "softaworks",
+      "toolImportance": {
+        "postgres": "essential"
+      }
+    },
+    {
+      "id": "ask-questions-first",
+      "name": "Ask Questions First",
+      "category": "workflow",
+      "triggers": [
+        "underspecified",
+        "ambiguous requirements",
+        "clarify requirements",
+        "ask questions"
+      ],
+      "cli": null,
+      "mcp": null,
+      "plugin": "ask-questions-first-plugin",
+      "source": "trailofbits"
+    },
+    {
+      "id": "browser-automation",
+      "name": "Browser Automation",
+      "category": "workflow",
+      "triggers": [
+        "browser automation",
+        "chrome automation",
+        "screenshots",
+        "web interaction",
+        "form filling"
+      ],
+      "cli": null,
+      "mcp": "claude-in-chrome",
+      "plugin": "browser-automation-plugin",
+      "source": "nickmohler",
+      "toolImportance": {
+        "claude-in-chrome": "essential"
+      },
+      "relatedPlugins": [
+        "webapp-testing-plugin"
+      ]
+    },
+    {
+      "id": "culture-index",
+      "name": "Culture Index",
+      "category": "utilities",
+      "triggers": [
+        "culture index",
+        "behavioral assessment",
+        "team dynamics",
+        "hiring profile"
+      ],
+      "cli": null,
+      "mcp": null,
+      "plugin": "culture-index-plugin",
+      "source": "trailofbits"
+    },
+    {
+      "id": "dwarf-expert",
+      "name": "DWARF Expert",
+      "category": "utilities",
+      "triggers": [
+        "DWARF",
+        "debug info",
+        "readelf",
+        "dwarfdump",
+        "binary analysis"
+      ],
+      "cli": null,
+      "mcp": null,
+      "plugin": "dwarf-expert-plugin",
+      "source": "trailofbits"
+    },
+    {
+      "id": "security-audit-context",
+      "name": "Security Audit Context",
+      "category": "security",
+      "triggers": [
+        "security audit context",
+        "deep code analysis",
+        "audit context",
+        "line-by-line review"
+      ],
+      "cli": null,
+      "mcp": null,
+      "plugin": "security-audit-context-plugin",
+      "source": "trailofbits"
+    },
+    {
+      "id": "security-differential-review",
+      "name": "Security Differential Review",
+      "category": "security",
+      "triggers": [
+        "differential review",
+        "PR security review",
+        "diff security",
+        "commit security review"
+      ],
+      "cli": null,
+      "mcp": null,
+      "plugin": "security-differential-review-plugin",
+      "source": "trailofbits",
+      "toolImportance": {
+        "github": "optional"
+      },
+      "relatedPlugins": [
+        "git-workflow-plugin"
+      ]
     }
   ],
   "companionPlugins": {
@@ -3215,7 +3883,7 @@
     },
     "nickmohler": {
       "name": "Nick Mohler",
-      "count": 16,
+      "count": 17,
       "description": "CLI integrations and orchestration"
     },
     "obra": {
@@ -3225,7 +3893,7 @@
     },
     "trailofbits": {
       "name": "Trail of Bits",
-      "count": 18,
+      "count": 23,
       "description": "Security skills and analysis tools"
     },
     "harperaa": {

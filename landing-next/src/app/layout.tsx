@@ -19,6 +19,12 @@ export const metadata: Metadata = {
   description: "180 curated skills, 37 plugins, 17 MCPs for Claude Code. One install. ~7% context cost. Ship faster with the most comprehensive Claude Code enhancement pack.",
   keywords: ["Claude Code", "AI coding", "skills pack", "MCP plugins", "developer tools"],
   authors: [{ name: "Rising Tides" }],
+  icons: {
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+    ],
+    apple: "/apple-touch-icon.png",
+  },
   openGraph: {
     title: "Rising Tides Skills Pack — 180 Skills for Claude Code",
     description: "180 curated skills, 37 plugins, 17 MCPs. One install. Ship faster.",

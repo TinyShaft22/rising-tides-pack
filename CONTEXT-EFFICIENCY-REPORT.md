@@ -115,7 +115,7 @@ With `ENABLE_TOOL_SEARCH=true`, the "theoretical optimal" from the previous repo
 | Test | What | Tool Search | Skills | MCPs | Total | Free |
 |------|------|-------------|--------|------|-------|------|
 | Baseline (79 skills, pre-dedup) | Fresh session | off | 15.0k | 11.3k | 33k | 134k (67%) |
-| With ENABLE_TOOL_SEARCH=auto | Before interaction | auto | 15.0k | 5.7k | 27k | 140k (70%) |
+| With ENABLE_TOOL_SEARCH=true | Before interaction | auto | 15.0k | 5.7k | 27k | 140k (70%) |
 | After interaction | Tool Search filled back | auto | 15.0k | 11.3k | 33k | 134k (67%) |
 | After dedup (79 skills) | Removed project copies | off | 13.7k | 11.3k | 33k | 134k (67%) |
 | Full system (196 skills) | All skills synced | off | 20.4k | 11.3k | 35k | 132k (66%) |

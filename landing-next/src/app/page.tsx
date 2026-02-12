@@ -23,11 +23,11 @@ export default function Home() {
       <Problem />
       <hr className="section-divider" />
       <Features />
+      <hr className="section-divider" />
+      <Demo />
       <VideoHero />
       <hr className="section-divider" />
       <HowItWorks />
-      <hr className="section-divider" />
-      <Demo />
       <hr className="section-divider" />
       <Categories />
       <hr className="section-divider" />

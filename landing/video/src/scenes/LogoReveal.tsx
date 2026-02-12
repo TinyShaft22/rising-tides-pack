@@ -33,7 +33,7 @@ export const LogoReveal: React.FC = () => {
   const brandText = "Rising Tides";
   const brandStart = 70;
 
-  // "Starter Pack" subtitle
+  // "Pack" subtitle
   const starterOpacity = interpolate(frame, [130, 150], [0, 1], {
     extrapolateLeft: "clamp", extrapolateRight: "clamp",
   });
@@ -151,7 +151,7 @@ export const LogoReveal: React.FC = () => {
           })}
         </div>
 
-        {/* "Starter Pack" subtitle */}
+        {/* "Starter Pack" subtitle - combines with "Rising Tides" above */}
         <div
           style={{
             fontSize: 36,

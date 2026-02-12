@@ -1,4 +1,4 @@
-import { AbsoluteFill, Sequence } from "remotion";
+import { AbsoluteFill, Sequence, Audio, staticFile } from "remotion";
 import { COLORS } from "./theme";
 import { SunraysBackground } from "./scenes/SunraysBackground";
 import { PainPoints } from "./scenes/PainPoints";
@@ -28,6 +28,9 @@ import { CallToAction } from "./scenes/CallToAction";
 export const PromoVideo: React.FC = () => {
   return (
     <AbsoluteFill style={{ backgroundColor: COLORS.bg }}>
+      {/* Voiceover audio */}
+      <Audio src={staticFile("voiceover.mp3")} />
+
       {/* Persistent sun rays behind everything */}
       <SunraysBackground />
 

@@ -33,7 +33,7 @@ Sound familiar?
 
 There's a better way. <break time="0.5s" />
 
-Rising Tides. <break time="0.8s" />
+The Rising Tides Starter Pack. <break time="0.8s" />
 
 The complete starter pack for Claude Code.
 ```
@@ -105,9 +105,7 @@ Context7 gives you live documentation for any library. <break time="0.5s" />
 
 Playwright runs browser automation and E2E tests. <break time="0.5s" />
 
-Memory persists knowledge across sessions. <break time="0.5s" />
-
-Remotion generates videos programmatically. <break time="0.8s" />
+Memory persists knowledge across sessions. <break time="0.8s" />
 
 Eighteen integrations. <break time="0.3s" /> Zero configuration.
 ```
@@ -195,7 +193,7 @@ Stop building skills from scratch. <break time="0.5s" />
 
 Start shipping code. <break time="1s" />
 
-Rising Tides Starter Pack. <break time="0.5s" />
+The Rising Tides Starter Pack. <break time="0.5s" />
 
 One command. <break time="0.3s" /> Everything you need. <break time="0.8s" />
 
@@ -272,7 +270,7 @@ Sound familiar?
 
 There's a better way. <break time="0.5s" />
 
-Rising Tides. <break time="0.8s" />
+The Rising Tides Starter Pack. <break time="0.8s" />
 
 The complete starter pack for Claude Code.
 
@@ -314,9 +312,7 @@ Context7 gives you live documentation for any library. <break time="0.5s" />
 
 Playwright runs browser automation and E2E tests. <break time="0.5s" />
 
-Memory persists knowledge across sessions. <break time="0.5s" />
-
-Remotion generates videos programmatically. <break time="0.8s" />
+Memory persists knowledge across sessions. <break time="0.8s" />
 
 Eighteen integrations. <break time="0.3s" /> Zero configuration.
 
@@ -364,7 +360,7 @@ Stop building skills from scratch. <break time="0.5s" />
 
 Start shipping code. <break time="1s" />
 
-Rising Tides Starter Pack. <break time="0.5s" />
+The Rising Tides Starter Pack. <break time="0.5s" />
 
 One command. <break time="0.3s" /> Everything you need. <break time="0.8s" />
 

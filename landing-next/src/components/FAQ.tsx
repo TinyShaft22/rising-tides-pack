@@ -38,7 +38,12 @@ const faqs = [
   {
     question: "What if I have trouble installing?",
     answer:
-      "Reach out and we'll help you get it working. The setup scripts handle most cases automatically, but if you run into issues, we're here to troubleshoot.",
+      "Drop the GitHub repo into Claude Desktop or paste it into Claude.ai and ask it to help you troubleshoot. The setup scripts handle most cases automatically, but Claude can walk you through any edge cases. That's the beauty of using an AI-powered tool — the documentation is self-helping.",
+  },
+  {
+    question: "Can't I just install a bunch of skills myself?",
+    answer:
+      "You could, but you'd be trading hours of work for a $99 shortcut. Rising Tides isn't just a skill collection — it's 187 tools that have been security audited, tested for context efficiency, and organized for on-demand loading. If you install skills from random GitHub repos, you should be doing security audits on every skill, MCP, and plugin yourself. We've already done that work. This is a quality-of-life improvement that gives you vetted tools without the risk.",
   },
   {
     question: "What happens after I buy?",

@@ -27,7 +27,7 @@ export const PromoVideo: React.FC = () => {
   return (
     <AbsoluteFill style={{ backgroundColor: COLORS.bg }}>
       {/* Voiceover audio */}
-      <Audio src={staticFile("voiceover-v3.mp3")} />
+      <Audio src={staticFile("voiceover-v4.mp3")} />
 
       {/* Persistent sun rays behind everything */}
       <SunraysBackground />
